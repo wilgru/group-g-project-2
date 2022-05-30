@@ -26,12 +26,18 @@ Project.init(
         clientId: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true,
+            references: {
+                model: 'client',
+                key: 'id',
+            }
         },
         managerId: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true
+            references: {
+                model: 'manager',
+                key: 'id',
+            }
         }
     },
     {
@@ -39,7 +45,7 @@ Project.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Project',
+        modelName: 'project',
     }
 );
 

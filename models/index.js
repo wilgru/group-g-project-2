@@ -5,15 +5,21 @@ const Project = require('./Project');
 const ClientProject = require('./ClientProject');
 
 Client.hasMany(Project, {
-    foreignKey: 'clientId'
-})
+    foreignKey: 'clientId',
+    onDelete: 'CASCADE',
+});
 
 Project.belongsTo(Client, {
-    foreignKey: 'clientId'
+    foreignKey: 'clientId',
 });
 
 Project.belongsTo(Manager, {
-    foreignKey: 'managerId'
+    foreignKey: 'managerId',
+});
+
+Manager.hasMany(Project, {
+    foreignKey: 'managerId',
+    onDelete: 'CASCADE',
 });
 
 module.exports = {

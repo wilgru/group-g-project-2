@@ -37,7 +37,7 @@ Client.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Client',
+        modelName: 'client',
     }
 );
 

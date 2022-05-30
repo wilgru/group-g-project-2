@@ -45,7 +45,7 @@ Manager.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Manager',
+        modelName: 'manager',
     }
 );
 
