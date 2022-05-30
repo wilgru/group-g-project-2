@@ -3,21 +3,18 @@
     "firstName": "Tim",
     "lastName": "Polo",
     "email": "tim@nambuccaeng.com",
-    "phone": "0400000000",
-    "clientId": 1
+    "phone": "0400000000"
   },
   {
     "firstName": "2Tim",
     "lastName": "2Polo",
     "email": "2tim@nambuccaeng.com",
-    "phone": "20400000000",
-    "clientId": 2
+    "phone": "20400000000"
   },
   {
     "firstName": "3Tim",
     "lastName": "3Polo",
     "email": "3tim@nambuccaeng.com",
-    "phone": "30400000000",
-    "clientId": 3
+    "phone": "30400000000"
   }
 ]

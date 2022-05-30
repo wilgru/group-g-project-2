@@ -14,15 +14,15 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project
-    });
-  }
-
   for (const client of clientData) {
     await Client.create({
       ...client
+    });
+  }
+
+  for (const project of projectData) {
+    await Project.create({
+      ...project
     });
   }
 
