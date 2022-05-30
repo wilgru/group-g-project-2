@@ -2,7 +2,7 @@ const express = require('express');
 
 // Import our modular routers for /tips and /feedback
 const api = require('./api');
-const projectRoutes = require('./projectRoutes');
+const projectRoutes = require('./projectsRoutes');
 
 const app = express();
 
