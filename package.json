@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "npx eslint **/*.js --quiet",
+    "lint-fix": "npx eslint **/*.js --fix"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.20.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
   }
 }
