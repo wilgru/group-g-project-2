@@ -1,0 +1,23 @@
+[
+  {
+    "projectName": "Steel Bridge",
+    "location": "Bailey's Creek",
+    "budget": 450000,
+    "clientId": 1,
+    "managerId": 1
+  },
+  {
+    "projectName": "Steel Bridge",
+    "location": "Bailey's Creek",
+    "budget": 450000,
+    "clientId": 1,
+    "managerId": 1
+  },
+  {
+    "projectName": "Steel Bridge",
+    "location": "Bailey's Creek",
+    "budget": 450000,
+    "clientId": 1,
+    "managerId": 2
+  }
+]
