@@ -13,13 +13,13 @@ Project.belongsTo(Client, {
     foreignKey: 'clientId',
 });
 
-Project.belongsTo(Manager, {
-    foreignKey: 'managerId',
-});
-
 Manager.hasMany(Project, {
     foreignKey: 'managerId',
     onDelete: 'CASCADE',
+});
+
+Project.belongsTo(Manager, {
+    foreignKey: 'managerId',
 });
 
 module.exports = {
