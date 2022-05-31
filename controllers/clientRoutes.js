@@ -2,17 +2,20 @@ const router = require('express').Router();
 // const withAuth = require('../utils/auth');
 const {} = require('../models');
 
-// project routes
 router.get('/list', (req, res) => {
-    res.render('projectList');
+    res.render('clientList');
 });
 
 router.get('/add', (req, res) => {
-    res.render('projectAdd');
+    res.render('clientAdd');
+});
+
+router.get('/view/projects', (req, res) => {
+    res.render('home');
 });
 
 router.get('/view', (req, res) => {
-    res.render('projectView');
+    res.render('clientView');
 });
 
 module.exports = router;
