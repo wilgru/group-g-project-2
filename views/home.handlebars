@@ -1,21 +1,15 @@
 <h1>Welcome to ProjectHub!</h1>
 <p>The easy way to manage your project and client data</p>
-<div>
+<div class="list-group">
+    <h2>Some of our current projects:</h2>
     <!-- Loop over each object in the projects array -->
     {{#each projects as |project| }}
-    <div class="row mb-4 project">
-        <div class="col-md-5">
-            <h2>
-                <a href="/project/{{project.id}}">{{project.projectName}}</a>
-            </h2>
-
-        </div>
-        <div class="col-md-7">
-            <p>
-                {{project.location}}
-            </p>
-        </div>
+    <div class="list-group-item">
+        <h2>
+            <a href="/project/{{project.id}}">{{project.projectName}}</a>
+        </h2>
+        <p>Location: {{project.location}}</p>
+        <p>Budget: {{project.budget}}</p>
     </div>
     {{/each}}
-
 </div>
