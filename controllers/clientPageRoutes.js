@@ -26,20 +26,31 @@ router.get("/add", (req, res) => {
 	res.render("clientAdd");
 });
 
-router.get("/view/projects", (req, res) => {
-	res.render("home");
-});
+// router.get("/view/projects", (req, res) => {
+// 	res.render("home");
+// });
 
-router.get("/view/client", async (req, res) => {
+router.get("/list/#firstName", async (req, res) => {
 	try {
+		const emptySearch = false;
+
 		// Get one clients by their first name
-		const clientViewData = await Client.findOne(req.params.firstName, {});
+		const clientViewData = await Client.findAll({
+			where: {
+				firstName: req.query.firstName
+			}
+		});
 
 		// Serialize data so the template can read it
 		const clients = clientViewData.map((posts) => posts.get({ plain: true }));
 
+		if (!clients) {
+			emptySearch = true;
+		}
+
 		// Pass serialized data and session flag into template
 		res.render("clientView", {
+			emptySearch,
 			clients,
 			logged_in: req.session.logged_in,
 			username: req.session.username,
@@ -53,13 +64,13 @@ router.get("/view/client", async (req, res) => {
 router.get("/view/:id", async (req, res) => {
 	try {
 		// Get one clients by their first name
-		const clientViewData = await Client.findOne(req.params.id, {});
+		const clientViewData = await Client.findByPk(req.params.id, {});
 
 		// Serialize data so the template can read it
-		const clients = clientViewData.map((posts) => posts.get({ plain: true }));
+		const clients = clientViewData.get({ plain: true });
 
 		// Pass serialized data and session flag into template
-		res.render("clientViewById", {
+		res.render("clientView", {
 			clients,
 			logged_in: req.session.logged_in,
 			// username: req.session.username,
