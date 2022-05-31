@@ -1,23 +1,30 @@
 [
   {
-    "projectName": "Steel Bridge",
-    "location": "Bailey's Creek",
-    "budget": 450000,
-    "clientId": 1,
-    "managerId": 1
-  },
-  {
-    "projectName": "Steel Bridge",
-    "location": "Bailey's Creek",
-    "budget": 450000,
-    "clientId": 1,
-    "managerId": 1
-  },
-  {
-    "projectName": "Steel Bridge",
-    "location": "Bailey's Creek",
-    "budget": 450000,
+    "projectName": "Suspension Bridge",
+    "location": "San Francisco",
+    "budget": 1000000,
     "clientId": 1,
     "managerId": 2
+  },
+  {
+    "projectName": "Proposed Residence",
+    "location": "3a Nyora Close Coffs Harbour",
+    "budget": 450000,
+    "clientId": 2,
+    "managerId": 3
+  },
+  {
+    "projectName": "Road Reconstruction",
+    "location": "Scotts Head Road Scotts Head",
+    "budget": 2400000,
+    "clientId": 3,
+    "managerId": 4
+  },
+  {
+    "projectName": "Alterations & Additions",
+    "location": "7a/70 First Avenue Sawtell",
+    "budget": 2400000,
+    "clientId": 3,
+    "managerId": 4
   }
 ]
