@@ -62,7 +62,7 @@ router.get("/view/:id", async (req, res) => {
 		res.render("clientViewById", {
 			clients,
 			logged_in: req.session.logged_in,
-			username: req.session.username,
+			// username: req.session.username,
 		});
 	} catch (err) {
 		console.error(err);
