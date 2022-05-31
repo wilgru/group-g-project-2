@@ -38,6 +38,9 @@ Project.init(
                 model: 'manager',
                 key: 'id',
             }
+        },
+        notes: {
+            type: DataTypes.TEXT
         }
     },
     {
