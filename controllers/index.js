@@ -3,7 +3,7 @@ const express = require('express');
 
 // Import our modular routers for /tips and /feedback
 const api = require('./api');
-const projectRoutes = require('./projectsRoutes');
+const projectRoutes = require('./homeRoutes');
 const clientRoutes = require('./clientRoutes');
 
 const app = express();
