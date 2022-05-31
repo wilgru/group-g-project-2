@@ -13,7 +13,7 @@ app.use("/client", clientRoutes);
 app.use("/project", projectRoutes);
 
 //very last cacth-all endpoint
-router.get("*", (req, res) => {
+app.get("*", (req, res) => {
 	res.render("home");
 });
 
