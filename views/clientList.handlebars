@@ -1,5 +1,8 @@
-<div>
+<div class="list-group">
     {{#each clients as |client|}}
     {{> clientCard}}
     {{/each}}
+    <a href="/client/add/" class="list-group-item list-group-item-action list-group-item-success">
+        + Add new client
+    </a>
 </div>
