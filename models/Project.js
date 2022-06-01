@@ -15,8 +15,24 @@ Project.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        location: {
+        // location: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
+        address: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        state: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        zip: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         budget: {
@@ -41,6 +57,10 @@ Project.init(
         },
         notes: {
             type: DataTypes.TEXT
+        },
+        dateCreated: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
         }
     },
     {
