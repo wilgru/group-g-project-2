@@ -1,3 +1,12 @@
+<section id="main-content-section" class="card">
+    <h1 class="card-title" style="text-decoration: underline;">{{project.projectName}}</h1>
+    <p>Job Number: {{project.id}}</p>
+    <p>Location: {{project.location}}</p>
+    <p>Budget: {{project.budget}}</p>
+    <p>Client: {{project.client.firstName}}{{project.client.lastName}}</p>
+    <p>Manager: {{project.manager.firstName}}{{project.manager.lastName}}</p>
+    <p>Notes: {{project.notes}}</p>
 
-
+    <div id="map-div"></div>
+</section>
 <script src="./../../js/projectView.js"></script>
