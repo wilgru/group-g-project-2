@@ -1,7 +1,6 @@
 const router = require("express").Router();
-// const withAuth = require('../utils/auth');
-const { Project } = require("../models");
-const Client = require("../models/Client");
+const withAuth = require('./../middlewares/withAuth');
+const { Project, Client } = require("../models");
 
 router.get("/list", async (req, res) => {
 	try {
@@ -15,6 +14,7 @@ router.get("/list", async (req, res) => {
 		res.render("clientList", {
 			clients,
 			logged_in: req.session.logged_in,
+			manager_name: req.session.manager_name
 		});
 	} catch (err) {
 		console.error(err);
@@ -23,7 +23,10 @@ router.get("/list", async (req, res) => {
 });
 
 router.get("/add", (req, res) => {
-	res.render("clientAdd");
+	res.render("clientAdd", {
+		logged_in: req.session.logged_in,
+		manager_name: req.session.manager_name,
+	});
 });
 
 // router.get("/view/projects", (req, res) => {
@@ -53,7 +56,7 @@ router.get("/list/#firstName", async (req, res) => {
 			emptySearch,
 			clients,
 			logged_in: req.session.logged_in,
-			username: req.session.username,
+			manager_name: req.session.manager_name,
 		});
 	} catch (err) {
 		console.error(err);
@@ -64,16 +67,25 @@ router.get("/list/#firstName", async (req, res) => {
 router.get("/view/:id", async (req, res) => {
 	try {
 		// Get one clients by their first name
-		const clientViewData = await Client.findByPk(req.params.id, {});
+		const clientViewData = await Client.findByPk(req.params.id, {
+			include: {
+				model: Project
+			}
+		});
+
+		if (!clientViewData) {
+			res.redirect('/');
+			return;
+		}
 
 		// Serialize data so the template can read it
-		const clients = clientViewData.get({ plain: true });
+		const client = clientViewData.get({ plain: true });
 
 		// Pass serialized data and session flag into template
 		res.render("clientView", {
-			clients,
+			client,
 			logged_in: req.session.logged_in,
-			// username: req.session.username,
+			manager_name: req.session.manager_name,
 		});
 	} catch (err) {
 		console.error(err);
