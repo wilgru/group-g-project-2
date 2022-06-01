@@ -29,30 +29,27 @@ router.get("/add", (req, res) => {
 		manager_name: req.session.manager_name,
 	});
 });
+// *****************************************************************
+// router.get("/view/:projectId", (req, res) => {
+// 	res.render("projectView", {
+// 		logged_in: req.session.logged_in,
+// 		manager_name: req.session.manager_name,
+// 	});
+// });
 
-router.get("/view/:projectId", (req, res) => {
-	res.render("projectView", {
-		logged_in: req.session.logged_in,
-		manager_name: req.session.manager_name,
-	});
-});
-
+// *****************************************************************
 
 router.get("/:id", async (req, res) => {
 	try {
 		// Get one projects by their first name
 		const projectViewData = await Project.findByPk(req.params.id, {
-			include: {
-				model: Client,
-				model: Manager
-			}
+			include: [{ model: Client }, { model: Manager }],
 		});
 
 		if (!projectViewData) {
 			res.redirect('/');
 			return;
 		}
-		console.log(projectViewData)
 
 		// Serialize data so the template can read it
 		const project = projectViewData.get({ plain: true });
