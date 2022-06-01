@@ -30,15 +30,15 @@ router.get("/add", (req, res) => {
 // 	res.render("home");
 // });
 
-router.get("/list/#firstName", async (req, res) => {
+router.get("/list/?q=firstName", async (req, res) => {
 	try {
 		const emptySearch = false;
 
 		// Get one clients by their first name
 		const clientViewData = await Client.findAll({
 			where: {
-				firstName: req.query.firstName
-			}
+				firstName: req.query.firstName,
+			},
 		});
 
 		// Serialize data so the template can read it

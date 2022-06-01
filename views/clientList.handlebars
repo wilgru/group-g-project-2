@@ -1,6 +1,6 @@
 <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search client's name" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    <input class="form-control me-2" id="search-button-field" type="search" placeholder="Search client's name" aria-label="Search">
+    <button class="btn btn-outline-success" id="search-button" type="submit">Search</button>
 </form>
 {{#if emptySearch}}
 <h1>No results.</h1>
@@ -15,4 +15,4 @@
 </div>
 {{/if}}
 
-<script src="./../../js/client.js"></script>
+<script src="./js/client.js"></script>
