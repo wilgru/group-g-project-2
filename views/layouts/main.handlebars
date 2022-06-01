@@ -18,12 +18,15 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="collapse navbar-collapse justify-content-md-between" id="navbarNavAltMarkup">
 					<div class="navbar-nav">
-						<a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 						<a class="nav-item nav-link" href="/client/list">Clients</a>
 						<a class="nav-item nav-link" href="/project/list">Projects</a>
-						<a class="nav-item nav-link disabled" href="#">Login</a>
+					</div>
+					<div>
+						<small class="text-muted">Hello {{manager_name}}!</small>
+						<a href="/login" id="logout" class="nav-link px-2 link-secondary" style="display: inline;">Log Out</a></li>
 					</div>
 				</div>
 			</nav>
@@ -32,11 +35,13 @@
 			<main class="container container-fluid mt-5">
 				{{{body}}}
 			</main>
-			<p class="lead">A simple CRM system for storing your client database</p>
 		</section>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		{{#if logged_in}}
+    	<script src="/js/logout.js"></script>
+    	{{/if}}
 	</body>
 </html>
