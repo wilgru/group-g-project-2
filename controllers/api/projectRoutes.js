@@ -14,6 +14,16 @@ router.post("/", async (req, res) => {
 			managerId: req.body.managerId,
 			notes: req.body.notes,
 		});
+
+		// Serialize data so the template can read it
+		const projects = newProject.get({ plain: true });
+
+		// Pass serialized data and session flag into template
+		res.render("projects", {
+			projects,
+			logged_in: req.session.logged_in,
+		});
+
 		console.log("newProject", newProject);
 		res.status(200).json(newProject);
 	} catch (err) {
