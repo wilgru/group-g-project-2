@@ -3,18 +3,34 @@
     "firstName": "James",
     "lastName": "Finley",
     "email": "jimmy@suspension.com",
-    "phone": "0400000000"
+    "phone": "0400000000",
+    "address": "3a Nyora Close",
+    "city": "Coffs Harbour",
+    "state": "NSW",
+    "zip": "2450",
+    "dateCreated": "2022-02-24"
+    
   },
   {
     "firstName": "Thomas",
     "lastName": "Telford",
     "email": "tom@telfordengineering.com",
-    "phone": "0411111111"
+    "phone": "0411111111",
+    "address": "3a Nyora Close",
+    "city": "Coffs Harbour",
+    "state": "NSW",
+    "zip": "2450",
+    "dateCreated": "2022-02-25"
   },
   {
     "firstName": "Isambard-Kingdom",
     "lastName": "Brunel",
     "email": "issy@greateastern.com",
-    "phone": "0422222222"
+    "phone": "0422222222",
+    "address": "Pitt Street",
+    "city": "Sydney",
+    "state": "NSW",
+    "zip": "2000",
+    "dateCreated": "2022-03-12"
   }
 ]
