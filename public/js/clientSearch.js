@@ -1,28 +1,9 @@
-document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
-
 const searchButtonHandler = async (event) => {
 	event.preventDefault();
 
-	const search = document.querySelector("#search-button");
-	console.log("message");
-	const searchField = document.getElementById("#search-button-field").value();
-	console.log(searchField);
+	const search = document.querySelector("#search-input").value;
 
-	if (searchField) {
-		const response = await fetch(`/client/list/?=${firstName}`, {
-			method: "POST",
-			// body: JSON.stringify({ project_id, comment }),
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-
-		if (response.ok) {
-			document.location.reload();
-		} else {
-			alert("Failed to fetch client");
-		}
-	}
+	document.location.replace(`/client/list/?q=${search}`);
 };
 
-document.querySelector("#search-button").addEventListener("click", searchButtonHandler);
+document.getElementById("search-client").addEventListener("submit", searchButtonHandler);

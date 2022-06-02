@@ -1,17 +1,50 @@
 const router = require("express").Router();
 const withAuth = require("./../utils/auth");
 const { Project, Client } = require("../models");
+const { Op, Sequelize } = require("sequelize");
 
 router.get("/list", withAuth, async (req, res) => {
 	try {
-		// Get all clients
-		const clientData = await Client.findAll({});
+		let clientData;
+		let isSearch = false;
+		let searchMessage = "";
+		let searchTerm = "";
+
+		// if ther are query params
+		if (req.query.q) {
+			isSearch = true;
+			searchTerm = req.query.q;
+
+			console.log(searchTerm)
+			// Get one clients by their first name
+			clientData = await Client.findAll({
+				where: {
+					firstName: {
+						[Op.substring]: searchTerm
+					}
+				}
+			});
+
+			searchMessage = `Found ${clientData.length} results for '${searchTerm}'`
+
+		} else {
+			// Get all clients
+			clientData = await Client.findAll();
+		}
+
+		if (!clientData) {
+			res.redirect('/');
+			return;
+		}
 
 		// Serialize data so the template can read it
 		const clients = clientData.map((posts) => posts.get({ plain: true }));
 
 		// Pass serialized data and session flag into template
 		res.render("clientList", {
+			isSearch,
+			searchMessage,
+			searchTerm,
 			clients,
 			logged_in: req.session.logged_in,
 			manager_name: req.session.manager_name,
@@ -27,41 +60,6 @@ router.get("/add", withAuth, (req, res) => {
 		logged_in: req.session.logged_in,
 		manager_name: req.session.manager_name,
 	});
-});
-
-// router.get("/view/projects", (req, res) => {
-// 	res.render("home");
-// });
-
-router.get("/list/#firstName", withAuth, async (req, res) => {
-	try {
-		const emptySearch = false;
-
-		// Get one clients by their first name
-		const clientViewData = await Client.findAll({
-			where: {
-				firstName: req.query.firstName,
-			},
-		});
-
-		// Serialize data so the template can read it
-		const clients = clientViewData.map((posts) => posts.get({ plain: true }));
-
-		if (!clients) {
-			emptySearch = true;
-		}
-
-		// Pass serialized data and session flag into template
-		res.render("clientView", {
-			emptySearch,
-			clients,
-			logged_in: req.session.logged_in,
-			manager_name: req.session.manager_name,
-		});
-	} catch (err) {
-		console.error(err);
-		res.status(500).json(err);
-	}
 });
 
 router.get("/view/:id", withAuth, async (req, res) => {
