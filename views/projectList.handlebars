@@ -1,7 +1,10 @@
-<form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search project's name" aria-label="Search">
+<form class="d-flex" role="search" id="search-project">
+    <input class="form-control me-2" type="search" id="search-input" placeholder="Search project's name" {{#if isSearch}}value="{{searchTerm}}"{{/if}} aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
+{{#if isSearch}}
+<h5 class="mt-4">{{searchMessage}}</h5>
+{{/if}}
 <div class="list-group">
     {{#each projects as |project|}}
     {{> projectCard}}
@@ -10,3 +13,5 @@
         + Add new Project
     </a>
 </div>
+<script src="./../../js/projectSearch.js"></script>
+
