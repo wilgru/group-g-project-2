@@ -15,8 +15,8 @@ app.use("/project", projectRoutes);
 
 app.use("/", homeRoutes);
 //very last cacth-all endpoint
-app.get("*", (req, res) => {
-	res.render("home");
-});
+// app.get("*", (req, res) => {
+// 	res.render("home");
+// });
 
 module.exports = app;

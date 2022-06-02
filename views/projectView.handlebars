@@ -1,12 +1,21 @@
 <section id="main-content-section" class="card">
     <h1 class="card-title" style="text-decoration: underline;">{{project.projectName}}</h1>
     <p>Job Number: {{project.id}}</p>
-    <p>Location: {{project.location}}</p>
+    <p id="street_address">Address: {{project.address}}</p>
+    <p id="city_address">City: {{project.city}}</p>
+    <p>State: {{project.state}}</p>
     <p>Budget: {{project.budget}}</p>
     <p>Client: {{project.client.firstName}} {{project.client.lastName}}</p>
     <p>Manager: {{project.manager.name}}</p>
     <p>Notes: {{project.notes}}</p>
 
-    <div id="map-div"></div>
 </section>
-<script src="./../../js/projectView.js"></script>
+<section>
+    <h3>Project Map</h3>
+    <!--The div element for the map -->
+    <div id="map" class="card"></div>
+
+</section>
+
+
+<script src="/js/projectView.js" defer></script>
