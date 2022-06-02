@@ -1,18 +1,22 @@
 const { Project } = require("../../models");
-
+const withAuth = require("./../../utils/auth");
 const router = require("express").Router();
 
 router.get("/");
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
 	try {
 		const newProject = await Project.create({
 			projectName: req.body.projectName,
-			location: req.body.location,
+			address: req.body.address,
 			budget: req.body.budget,
 			clientId: req.body.clientId,
 			managerId: req.body.managerId,
-			notes: req.body.notes,
+			description: req.body.notes,
+			city: req.body.city,
+			state: req.body.state,
+			zip: req.body.zip,
+			dateCreated: req.body.dateCreated,
 		});
 
 		// Serialize data so the template can read it

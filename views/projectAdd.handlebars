@@ -16,14 +16,18 @@
 			<label for="inputBudget">Client</label>
 			<select id="inputClient" class="form-control">
 				<option selected>Choose...</option>
-				<option>...</option>
+				{{#each client as |c|}}
+					<option value="{{c.id}}">{{c.firstName}}</option>
+				{{/each}}
 			</select>
 		</div>
 		<div class="form-group col-md-4">
 			<label for="inputBudget">Manager</label>
 			<select id="inputManager" class="form-control">
 				<option selected>Choose...</option>
-				<option>...</option>
+				{{#each manager as |m|}}
+					<option value="{{m.id}}">{{m.name}}</option>
+				{{/each}}
 			</select>
 		</div>
 	</div>
@@ -40,7 +44,12 @@
 			<label for="inputState">State</label>
 			<select id="inputState" class="form-control">
 				<option selected>Choose...</option>
-				<option>...</option>
+				<option>NSW</option>
+				<option>WA</option>
+				<option>ACT</option>
+				<option>QLD</option>
+				<option>SA</option>
+				<option>TAS</option>
 			</select>
 		</div>
 		<div class="form-group col-md-2">
@@ -56,3 +65,5 @@
 	</div>
 	<button type="submit" class="btn btn-primary">Add Project</button>
 </form>
+
+<script src="./../../js/projectAdd.js"></script>
