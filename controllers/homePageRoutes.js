@@ -1,24 +1,24 @@
-const router = require('express').Router();
-const { Project, Manager, Client } = require('../models');
-const withAuth = require('./../middlewares/withAuth');
+const router = require("express").Router();
+const withAuth = require("./../utils/auth");
+const { Project, Manager, Client } = require("../models");
 
-router.get('/', async (req, res) => {
-    try {
-        // Get all projects and JOIN with user data
-        const projectData = await Project.findAll({});
+router.get("/", withAuth, async (req, res) => {
+	try {
+		// Get all projects and JOIN with user data
+		const projectData = await Project.findAll({});
 
-        // Serialize data so the template can read it
-        const projects = projectData.map((project) => project.get({ plain: true }));
+		// Serialize data so the template can read it
+		const projects = projectData.map((project) => project.get({ plain: true }));
 
-        // Pass serialized data and session flag into template
-        res.render('home', {
-            projects,
-            logged_in: req.session.logged_in,
-            manager_name: req.session.manager_name,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+		// Pass serialized data and session flag into template
+		res.render("home", {
+			projects,
+			logged_in: req.session.logged_in,
+			manager_name: req.session.manager_name,
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	}
 });
 
 // router.get('/project/:id', async (req, res) => {
@@ -63,24 +63,24 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
+router.get("/login", (req, res) => {
+	// If the user is already logged in, redirect the request to another route
+	if (req.session.logged_in) {
+		res.redirect("/");
+		return;
+	}
 
-  res.render('login', {layout: 'loginSignup.handlebars'});
+	res.render("login", { layout: "loginSignup.handlebars" });
 });
 
-router.get('/signup', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
+router.get("/signup", (req, res) => {
+	// If the user is already logged in, redirect the request to another route
+	if (req.session.logged_in) {
+		res.redirect("/");
+		return;
+	}
 
-  res.render('signup', {layout: 'loginSignup.handlebars'});
+	res.render("signup", { layout: "loginSignup.handlebars" });
 });
 
 module.exports = router;

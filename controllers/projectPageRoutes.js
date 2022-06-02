@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const withAuth = require("./../middlewares/withAuth");
+const withAuth = require("./../utils/auth");
 const { Project, Client, Manager } = require("../models");
 
 // project routes
-router.get("/list", async (req, res) => {
+router.get("/list", withAuth, async (req, res) => {
 	try {
 		// Get all projects and JOIN with projects data
 		const projectData = await Project.findAll({});
@@ -23,7 +23,7 @@ router.get("/list", async (req, res) => {
 	}
 });
 
-router.get("/add", async (req, res) => {
+router.get("/add", withAuth, async (req, res) => {
 	try {
 		const projectViewDate = await Client.findAll({
 			attributes: ["id", "firstName"],
@@ -59,7 +59,7 @@ router.get("/add", async (req, res) => {
 
 // *****************************************************************
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
 	try {
 		// Get one projects by their first name
 		const projectViewData = await Project.findByPk(req.params.id, {
