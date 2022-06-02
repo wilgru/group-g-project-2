@@ -19,6 +19,26 @@ Client.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        // location: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
+        address: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        state: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        zip: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -29,6 +49,10 @@ Client.init(
         },
         phone: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        dateCreated: {
+            type: DataTypes.DATEONLY,
             allowNull: false
         }
     },

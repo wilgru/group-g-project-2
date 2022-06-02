@@ -1,30 +1,46 @@
 [
   {
     "projectName": "Suspension Bridge",
-    "location": "San Francisco",
+    "address": "Perry St",
+    "city": "San Francisco",
+    "state": "California",
+    "zip": "1111",
     "budget": 1000000,
     "clientId": 1,
-    "managerId": 2
+    "managerId": 2,
+    "dateCreated": "2022-02-28"
   },
   {
     "projectName": "Proposed Residence",
-    "location": "3a Nyora Close Coffs Harbour",
+    "address": "3a Nyora Close",
+    "city": "Coffs Harbour",
+    "state": "NSW",
+    "zip": "2450",
     "budget": 450000,
     "clientId": 2,
-    "managerId": 3
+    "managerId": 3,
+    "dateCreated": "2022-03-04"
   },
   {
     "projectName": "Road Reconstruction",
-    "location": "Scotts Head Road Scotts Head",
+    "address": "Scotts Head Road",
+    "city": "Scotts Head",
+    "state": "NSW",
+    "zip": "2447",
     "budget": 2400000,
     "clientId": 3,
-    "managerId": 4
+    "managerId": 4,
+    "dateCreated": "2022-03-16"
   },
   {
     "projectName": "Alterations & Additions",
-    "location": "7a/70 First Avenue Sawtell",
+    "address": "7a/70 First Avenue",
+    "city": "Sawtell",
+    "state": "NSW",
+    "zip": "2452",
     "budget": 2400000,
     "clientId": 3,
-    "managerId": 4
+    "managerId": 4,
+    "dateCreated": "2022-03-22"
   }
 ]
