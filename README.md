@@ -1,10 +1,11 @@
 
 # ProjectHub
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![googleMaps](https://img.shields.io/badge/API-GoogleMaps-Blue)
+![googleMaps](https://img.shields.io/badge/API-DomainAPI-Blue)
+![lodash](https://img.shields.io/badge/node-lodash-orange)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Deployed web address
+<!-- ## Deployed web address -->
 
 You can visit the deployed web application [here]()
 <br>
@@ -29,35 +30,36 @@ Functionality here
 <br>
 
 Technologies used:  
-1 -
 
-2 -
+1.
 
-3 -
+2.
 
-4 -
+3.
+
+4.
 <br>
 
 <a name="Usage"></a>
 ## Usage Instructions
 
-1 - 
+1. 
 
-2 -  
+2.  
 
-3 -  
+3.  
 
-4 -   
+4.   
 <br>
 
 <a name="Future"></a>
 ## Future Development
 
-feature - desc
+- <strong>Edit/Delete Records:</strong> giving the website full CRUD like features, which in turn makes teh website more useful.
 
-feature - desc
+- <strong>Pagination:</strong> pages displaying lists of records could be paginated so that the webpage can load faster and so that the user is not overwhelmed with information.
 
-feature - desc
+- <strong>Export CSV data:</strong> Abitliy to export clients and projects database as an CSV file to be able to load into a spreadsheet and do calculations with
 <br>
 
 <a name="Gallery"></a>
@@ -70,10 +72,10 @@ feature - desc
 
 <a name="Resources"></a>
 ## Resources
-1 -     
+1. Lodash - https://lodash.com/docs/4.17.15
 
-2 -     
+2. Sequelize 7 API - https://sequelize.org/
 
-3 -     
+3. Express.js - https://expressjs.com/
 
-4 - 
+4. Google Maps Platform API - https://developers.google.com/maps/documentation
