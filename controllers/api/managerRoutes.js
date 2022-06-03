@@ -28,7 +28,6 @@ router.post("/login", async (req, res) => {
 		req.session.save(() => {
 			req.session.manager_id = manager.id;
 			req.session.manager_name = manager.name;
-			req.session.manager_email = manager.password;
 			req.session.logged_in = true;
 
 			res.json({ pass: true, message: "logged in!" });
@@ -39,15 +38,16 @@ router.post("/login", async (req, res) => {
 	}
 });
 
-router.post("/signup", withAuth, async (req, res) => {
+router.post("/signup", async (req, res) => {
 	try {
 		const newManagerData = await Manager.create(req.body);
-		const newManager = newManagerData.get({ plain: true });
+		const newManager = await newManagerData.get({ plain: true });
+
+		console.log(newManager)
 
 		req.session.save(() => {
-			req.session.Manager_id = newManager.id;
-			req.session.Manager_name = newManager.name;
-			req.session.Manager_email = newManager.password;
+			req.session.manager_id = newManager.id;
+			req.session.manager_name = newManager.name;
 			req.session.logged_in = true;
 
 			res.json({ pass: true, message: "You are now logged in!" });
