@@ -65,9 +65,7 @@ Technologies used:
 <a name="Gallery"></a>
 ## Gallery
 
-![Alt Text]()
-![Alt Text]()
-![Alt Text]()
+![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo1.png)
 <br>
 
 <a name="Resources"></a>
