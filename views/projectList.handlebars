@@ -1,11 +1,15 @@
+<link rel="stylesheet" href="./../../css/style.css"/>
+<h1>Projects</h1>
 <form class="d-flex" role="search" id="search-project">
-    <input class="form-control me-2" type="search" id="search-input" placeholder="Search project's name" {{#if isSearch}}value="{{searchTerm}}"{{/if}} aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    <input class="form-control my-2 mr-2" type="search" id="search-input" placeholder="Search project's name" {{#if isSearch}}value="{{capitalise searchTerm}}"{{/if}} aria-label="Search">
+    <button class="btn btn-outline-success my-2" type="submit">Search</button>
 </form>
 {{#if isSearch}}
 <h5 class="mt-4">{{searchMessage}}</h5>
+{{else}}
+<h5 class="mt-4">{{get_length projects}} Records total</h5>
 {{/if}}
-<div class="list-group">
+<div class="list-group mb-4">
     {{#each projects as |project|}}
     {{> projectCard}}
     {{/each}}
