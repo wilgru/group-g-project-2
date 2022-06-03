@@ -12,10 +12,10 @@ router.post("/", withAuth, async (req, res) => {
 			budget: req.body.budget,
 			clientId: req.body.clientId,
 			managerId: req.body.managerId,
-			description: req.body.notes,
 			city: req.body.city,
 			state: req.body.state,
 			zip: req.body.zip,
+			notes: req.body.notes,
 			dateCreated: req.body.dateCreated,
 		});
 
