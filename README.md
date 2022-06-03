@@ -66,6 +66,8 @@ Technologies used:
 ## Gallery
 
 ![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo1.png)
+![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo2.png)
+![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo3.png)
 <br>
 
 <a name="Resources"></a>
