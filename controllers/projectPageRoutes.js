@@ -59,7 +59,7 @@ router.get("/list", withAuth, async (req, res) => {
 router.get("/add", withAuth, async (req, res) => {
 	try {
 		const projectViewDate = await Client.findAll({
-			attributes: ["id", "firstName"],
+			attributes: ["id", "firstName", "lastName"],
 		});
 
 		const client = projectViewDate.map((project) => project.get({ plain: true }));

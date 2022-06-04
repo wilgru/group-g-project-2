@@ -3,11 +3,11 @@
     "firstName": "James",
     "lastName": "Finley",
     "email": "jimmy@suspension.com",
-    "phone": "0400000000",
-    "address": "3a Nyora Close",
-    "city": "Coffs Harbour",
-    "state": "NSW",
-    "zip": "2450",
+    "phone": "0491570156",
+    "address": "25 Foreshore Road",
+    "city": "LANDSDALE",
+    "state": "WA",
+    "zip": "6065",
     "dateCreated": "2022-02-24"
     
   },
@@ -15,22 +15,56 @@
     "firstName": "Thomas",
     "lastName": "Telford",
     "email": "tom@telfordengineering.com",
-    "phone": "0411111111",
-    "address": "3a Nyora Close",
-    "city": "Coffs Harbour",
-    "state": "NSW",
-    "zip": "2450",
+    "phone": "0491570157",
+    "address": "76 Gaffney Street",
+    "city": "CHELSEA HEIGHTS",
+    "state": "VIC",
+    "zip": "3196",
     "dateCreated": "2022-02-25"
   },
   {
     "firstName": "Isambard-Kingdom",
     "lastName": "Brunel",
     "email": "issy@greateastern.com",
-    "phone": "0422222222",
-    "address": "Pitt Street",
-    "city": "Sydney",
+    "phone": "0491570158",
+    "address": "45 Woodlands Avenue",
+    "city": "GALSTON",
     "state": "NSW",
-    "zip": "2000",
+    "zip": "2159",
     "dateCreated": "2022-03-12"
+  },
+  {
+    "firstName": "Taylah",
+    "lastName": "Fiveash",
+    "email": "TaylahFiveash@jourrapide.com",
+    "phone": "(07) 4000 5459",
+    "address": "36 Banksia Court",
+    "city": "WEST POINT",
+    "state": "QLD",
+    "zip": "4819",
+    "dateCreated": "2022-03-19"
+    
+  },
+  {
+    "firstName": "Isla",
+    "lastName": "Hetherington",
+    "email": "Islah@jourrapide.com",
+    "phone": "(02) 4706 2267",
+    "address": "48 Berambing Crescent",
+    "city": "SUN VALLEY",
+    "state": "NSW",
+    "zip": "2777",
+    "dateCreated": "2022-03-20"
+  },
+  {
+    "firstName": "Aidan",
+    "lastName": "Stone-Wigg",
+    "email": "AidanStone-Wigg@jourrapide.com",
+    "phone": "(08) 8952 9294",
+    "address": "17 Decca Road",
+    "city": "ROSEBERY",
+    "state": "NT",
+    "zip": "0820",
+    "dateCreated": "2022-04-04"
   }
 ]

@@ -48,14 +48,15 @@ const formHandler = async (event) => {
         method: 'POST',
         body: JSON.stringify({ name: nameVal, email: emailVal, password: passwordVal }),
         headers: { 'Content-Type': 'application/json' }
-      });
+    });
 
     let signupObj = await signupData.json();
-    if (!signupData.pass) {
+    if (!signupObj.pass) {
         alert(signupObj.message);
         return;
     }
 
-    window.location.replace("/");
+    // window.location.replace("/");
+    window.location = "/";
 }
 form.addEventListener('submit', formHandler);

@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="./../../../css/style.css"/>
 <div class="container">
   <div class="row">
     <div class="card mb-3 col-lg-4 col-sm-12 col-12" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">{{client.firstName}} {{client.lastName}}</h5>
-        <small class="text-muted">ID: {{client.id}}</small>  <small class="text-muted">Client since: {{format_date client.dateCreated}}</small>
+        <small class="text-muted">ID: {{pad client.id}}</small><br> 
+        <small class="text-muted">Client since: {{format_date client.dateCreated}}</small>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Email: <a href="mailto:{{client.email}}">{{client.email}}</a></li>
