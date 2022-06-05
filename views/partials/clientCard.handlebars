@@ -1,10 +1,10 @@
 <div class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <div>
-          <h5 class="mb-1" style="display: inline-block;">{{firstName}} {{lastName}}</h5>
-          <small class="text-muted">client since {{format_date dateCreated}}</small>
-        </div>
-      <a href="mailto:{{email}}"><small class="text-muted">{{email}}</small></a>
-    </div>
-    <a href="/client/view/{{id}}">View file</a>
+	<div class="d-flex w-100 justify-content-between">
+		<div>
+			<h5 class="mb-1" style="display: inline-block;">{{firstName}} {{lastName}}</h5>
+			<small class="text-muted">client since {{format_date dateCreated}}</small>
+		</div>
+		<a href="mailto:{{email}}"><small class="text-muted">{{email}}</small></a>
+	</div>
+	<a href="/client/view/{{id}}" id="view">View file</a>
 </div>

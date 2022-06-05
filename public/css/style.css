@@ -1,11 +1,65 @@
 * {
-  font-family: "Noto Serif", serif;
-  color: #07062d;
+	font-family: "Noto Serif", serif;
+	color: #07062d;
 }
 
 /* Set the size of the div element that contains the map */
 #map {
-    height: 400px;
-    /* The height is 400 pixels */
-    width: 400px;
+	height: 400px;
+	/* The height is 400 pixels */
+	width: 400px;
+}
+
+/* adds colour to the navbar */
+.jumbotron {
+	background-color: #6c92ab;
+}
+
+.navbar {
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+/* adds colour to the titles */
+h1 {
+	color: #234d74;
+	text-align: center;
+	padding: 20px;
+}
+
+/* adds colour to the subtitles */
+h2 {
+	color: #234d74;
+	text-align: center;
+	padding: 20px;
+}
+
+/* Adds colour to welcome message */
+.text-center {
+	color: #234d74;
+}
+
+/* Adds colour to Project */
+#project {
+	color: #234d74;
+}
+
+/* Adds colour to view links */
+#view {
+	color: #b46f66;
+}
+
+/* Adds colour to logout link */
+#logout {
+	color: #04203c;
+}
+
+/* Adds margin to page */
+.container {
+	margin-bottom: 80px;
+}
+
+#add {
+	background-color: #04203c;
+	color: azure;
 }
