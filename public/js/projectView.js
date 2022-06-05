@@ -56,7 +56,6 @@ function cityGoogleInfo() {
     return fetch(latLongAPIRequest)
         .then((response) => response.json())
         .then((data) => {
-            // This is where the data response is-- - console.log(data)
             cityGoogleObject.lat = data.results[0].geometry.location.lat;
             cityGoogleObject.long = data.results[0].geometry.location.lng;
             cityGoogleObject.address = data.results[0].formatted_address;
@@ -70,7 +69,7 @@ async function init() {
     await cityGoogleInfo();
     await getDomainPropertyID();
     await getDomainLocationID();
-    await getDomainInfo();
+    await getDomainSuburbInfo();
     window.initMap = initMap;
     // Setup Google maps section
     // Create the script tag, set the appropriate attributes for Initial Google Map. initMap function called.
@@ -108,21 +107,37 @@ function getDomainLocationID() {
         .then((response) => response.json())
         .then((data) => {
             domainObject.ids = data[0].ids;
-            console.log(domainObject.ids);
+            domainObject.suburbID = domainObject.ids[2].id;
+            console.log(domainObject)
         });
 }
 
 // https://api.domain.com.au/v1/locations/profiles/41352
-function getDomainInfo() {
-    let domainRequest = `https://api.domain.com.au/v1/locations/profiles/${domainObject.ids[2].id}&api_key=${domainAPIKey}`;
+// function getDomainInfo() {
+//     let domainRequest = `https://api.domain.com.au/v1/locations/profiles/${domainObject.ids[2].id}&api_key=${domainAPIKey}`;
+
+//     return fetch(domainRequest)
+//         .then((response) => response.json())
+//         .then((data) => {
+//             console.log(data);
+//         });
+
+// }
+
+
+function getDomainSuburbInfo() {
+    // &api_key=${domainAPIKey}
+    let domainRequest = `https://api.domain.com.au/v2/suburbPerformanceStatistics/${domainObject.addressComponents.state}/${domainObject.addressComponents.suburb}/${domainObject.addressComponents.postCode}?api_key=${domainAPIKey}`;
 
     return fetch(domainRequest)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
         });
-
 }
+
+// /v2/suburbPerformanceStatistics/{state}/{suburb}/{postcode}
+
 // -------------------------------------------------------
 
 init();
