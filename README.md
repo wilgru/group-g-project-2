@@ -38,7 +38,13 @@ Technologies used:
 
 3. Handlebars
 
-4.
+4. Lodash
+
+5. Express Js
+
+6. MySql
+
+7. Sequelize
 
 <br>
 
@@ -46,13 +52,15 @@ Technologies used:
 
 ## Usage Instructions
 
-1.
+1. To install necessary dependencies, run the following command: `npm install`.
 
 2.
 
 3.
 
-4.  <br>
+4.
+
+ <br>
 
 <a name="Future"></a>
 
