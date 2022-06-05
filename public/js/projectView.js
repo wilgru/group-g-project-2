@@ -1,5 +1,5 @@
 // Connect to HTML
-const mainContentDiv = document.getElementById('main-content-section');
+const domainSection = document.getElementById('domain-section');
 const mapDiv = document.getElementById('map');
 const streetAddress = document.getElementById('street_address').textContent.replace('Address: ', '');
 const cityAddress = document.getElementById('city_address').textContent.replace('City: ', '');
@@ -10,7 +10,7 @@ const googleMapsAPIKey = "AIzaSyBZSbspfBXqcmanZk33s7O_cjZnyS3X2r4";
 const googleGeocodingAPIKey = "AIzaSyA3xEm83IcSrmNBMoTLR5PQHJ1WZ9Jr6kY";
 const domainAPIKey = 'key_fe3c219649342187fcd7449017a171bc';
 let map;
-// Object has .lat, .long , .address and .touristAttractionsSearchURL variables
+// Object has .lat, .long , .address variables
 const cityGoogleObject = {};
 const defaultCityName = 'Sydney';
 const domainObject = {};
@@ -70,6 +70,7 @@ async function init() {
     await getDomainPropertyID();
     await getDomainLocationID();
     await getDomainSuburbInfo();
+    await renderDomainSection();
     window.initMap = initMap;
     // Setup Google maps section
     // Create the script tag, set the appropriate attributes for Initial Google Map. initMap function called.
@@ -81,9 +82,6 @@ async function init() {
 }
 
 // Domain API   ----------------------------------------------------
-// https://api.domain.com.au/v1/properties/RF-8884-AK/priceEstimate 
-// `https://api.domain.com.au/v1/properties/_suggest?terms=1%20Smith%20Street%2C%20Smithfield%2C%20NSW&pageSize=20&channel=residential&api_key=${domainAPIKey}`;
-
 function getDomainPropertyID() {
     let domainRequest = `https://api.domain.com.au/v1/properties/_suggest?terms=${searchCity}&pageSize=1&channel=residential&api_key=${domainAPIKey}`;
 
@@ -96,10 +94,6 @@ function getDomainPropertyID() {
 }
 
 function getDomainLocationID() {
-    //https://api.domain.com.au/v1/addressLocators
-    //   ?searchLevel=Address&streetNumber=100
-    //   &streetName=Harris&streetType=Street
-    //   &suburb=Pyrmont&state=NSW&postcode=2009
     let domainRequest = `https://api.domain.com.au/v1/addressLocators
 ?searchLevel=Address&streetNumber=${domainObject.addressComponents.streetNumber}&streetName=${domainObject.addressComponents.streetName}&streetType=${domainObject.addressComponents.streetType}&suburb=${domainObject.addressComponents.suburb}&state=${domainObject.addressComponents.state}&postcode=${domainObject.addressComponents.postCode}&api_key=${domainAPIKey}`;
 
@@ -112,31 +106,34 @@ function getDomainLocationID() {
         });
 }
 
-// https://api.domain.com.au/v1/locations/profiles/41352
-// function getDomainInfo() {
-//     let domainRequest = `https://api.domain.com.au/v1/locations/profiles/${domainObject.ids[2].id}&api_key=${domainAPIKey}`;
-
-//     return fetch(domainRequest)
-//         .then((response) => response.json())
-//         .then((data) => {
-//             console.log(data);
-//         });
-
-// }
-
-
 function getDomainSuburbInfo() {
-    // &api_key=${domainAPIKey}
-    let domainRequest = `https://api.domain.com.au/v2/suburbPerformanceStatistics/${domainObject.addressComponents.state}/${domainObject.addressComponents.suburb}/${domainObject.addressComponents.postCode}?api_key=${domainAPIKey}`;
+    let domainRequest = `https://api.domain.com.au/v2/suburbPerformanceStatistics/${domainObject.addressComponents.state}/${domainObject.addressComponents.suburb}/${domainObject.addressComponents.postCode}?api_key=${domainAPIKey}&chronologicalSpan=12&tPlusFrom=1&tPlusTo=3`;
 
     return fetch(domainRequest)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            domainObject.suburb = data.header.suburb;
+            domainObject.suburbInfo = data.series.seriesInfo[3].values;
+            console.log(domainObject.suburbInfo);
         });
 }
 
-// /v2/suburbPerformanceStatistics/{state}/{suburb}/{postcode}
+function renderDomainSection() {
+    let header = document.createElement("h4");
+    let text = document.createElement("p");
+    header.textContent = `Project Feasibility Info for : ${domainObject.suburb}`
+    text.innerHTML = "Median House Price: " + domainObject.suburbInfo.medianSoldPrice + "<br>" +
+        "Houses Sold (last quarter): " + domainObject.suburbInfo.numberSold + '<br>' +
+        "5th Percentile Price: $" + domainObject.suburbInfo['5thPercentileSoldPrice'] + '<br>' +
+        "25th Percentile Price: $" + domainObject.suburbInfo['25thPercentileSoldPrice'] + '<br>' +
+        "75th Percentile Price: $" + domainObject.suburbInfo['75thPercentileSoldPrice'] + '<br>' +
+        "95th Percentile Price: $" + domainObject.suburbInfo['95thPercentileSoldPrice'] + '<br>'
+
+
+    domainSection.appendChild(header);
+    domainSection.appendChild(text);
+
+}
 
 // -------------------------------------------------------
 
