@@ -1,26 +1,16 @@
-const delFormHandler = async (event) => {
-	event.preventDefault();
+const delButtonHandler = async (event) => {
+	console.log(event);
+	const id = event.target.getAttribute("data-client-id");
 
-	const name = document.querySelector("#inputclientName").value();
-	const budget = document.querySelector("#inputBudget").value();
-	const client = document.querySelector("#inputClient").value();
-	const address = document.querySelector("#inputAddress").value();
-	const city = document.querySelector("#inputCity").value();
-	const state = document.querySelector("#inputState").value();
-	const zip = document.querySelector("#inputZip").value();
-	const description = document.querySelector("#inputDescription").value();
+	const response = await fetch(`/api/client/${id}`, {
+		method: "DELETE",
+	});
 
-	if (name && budget && client && address && city && state && zip && description) {
-		const response = await fetch(`/api/clientRoutes${id}`, {
-			method: "DELETE",
-		});
-
-		if (response.ok) {
-			document.location.replace("/client");
-		} else {
-			alert("Failed to delete a client");
-		}
+	if (response.ok) {
+		document.location.replace("/client");
+	} else {
+		alert("Failed to delete client");
 	}
 };
 
-document.querySelector(".form-client-delete").addEventListener("click", delFormHandler);
+document.querySelector("#delete-client").addEventListener("click", delButtonHandler);

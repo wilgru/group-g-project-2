@@ -15,25 +15,24 @@ router.get("/list", withAuth, async (req, res) => {
 			isSearch = true;
 			searchTerm = req.query.q;
 
-			console.log(searchTerm)
+			console.log(searchTerm);
 			// Get one clients by their first name
 			clientData = await Client.findAll({
 				where: {
 					firstName: {
-						[Op.substring]: searchTerm
-					}
-				}
+						[Op.substring]: searchTerm,
+					},
+				},
 			});
 
-			searchMessage = `Found ${clientData.length} results for '${searchTerm}'`
-
+			searchMessage = `Found ${clientData.length} results for '${searchTerm}'`;
 		} else {
 			// Get all clients
 			clientData = await Client.findAll();
 		}
 
 		if (!clientData) {
-			res.redirect('/');
+			res.redirect("/");
 			return;
 		}
 
@@ -85,6 +84,27 @@ router.get("/view/:id", withAuth, async (req, res) => {
 			logged_in: req.session.logged_in,
 			manager_name: req.session.manager_name,
 		});
+	} catch (err) {
+		console.error(err);
+		res.status(500).json(err);
+	}
+});
+
+router.delete("/:id", withAuth, async (req, res) => {
+	try {
+		const clientData = await Client.destroy({
+			where: {
+				id: req.params.id,
+				user_id: req.session.user_id,
+			},
+		});
+
+		if (!clientData) {
+			res.status(404).json({ message: "No client found with this id!" });
+			return;
+		}
+
+		res.status(200).json(clientData);
 	} catch (err) {
 		console.error(err);
 		res.status(500).json(err);
