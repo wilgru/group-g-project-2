@@ -1,4 +1,4 @@
-const { Client, Manager } = require("../../models");
+const { Client } = require("../../models");
 const router = require("express").Router();
 
 router.post("/", async (req, res) => {
