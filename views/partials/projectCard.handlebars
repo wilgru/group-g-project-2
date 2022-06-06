@@ -6,9 +6,11 @@
 		</div>
 	</div>
 	<p class="mb-2">{{address}}, {{city}} {{zip}}, {{state}} </p>
+
+	<!-- links section -->
 	<div id="project-links-div">
 		<a href="/project/{{id}}" id="view" class="d-inline py-2">View Project</a>
-
+		<!-- if this project is managed by the manager, then show a delete button -->
 		{{#if managedByLoggedIn}}
 		<a href="" id="delete-{{id}}" data-projectid="{{id}}"
 			style="color: red; text-decoration: underline; padding-left: 10px;"
