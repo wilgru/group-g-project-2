@@ -13,6 +13,12 @@ const pad = (word) => {
     return _.padStart(word, 3, '0')
 }
 
+const format_dollars = (value) => {
+    const formatter = Intl.NumberFormat('en-US', {style: 'currency', currency: 'AUD'});
+
+    return formatter.format(value).replace('A$', '$');
+} 
+
 const get_length = (array) => {
     return array.length
 }
@@ -22,4 +28,4 @@ const format_date = (date) => {
     return `${newDate.getDate()}/${newDate.getMonth() + 1}/${newDate.getFullYear()}`;
 }
 
-module.exports = { format_date, capitalise, capitalise_first_word, get_length, pad };
+module.exports = { format_date, format_dollars, capitalise, capitalise_first_word, get_length, pad };
