@@ -1,7 +1,8 @@
-<link rel="stylesheet" href="./../../css/style.css"/>
+<link rel="stylesheet" href="./../../css/style.css" />
 <h1>Projects</h1>
 <form class="d-flex" role="search" id="search-project">
-    <input class="form-control my-2 mr-2" type="search" id="search-input" placeholder="Search project's name" {{#if isSearch}}value="{{capitalise searchTerm}}"{{/if}} aria-label="Search">
+    <input class="form-control my-2 mr-2" type="search" id="search-input" placeholder="Search project's name" {{#if
+        isSearch}}value="{{capitalise searchTerm}}" {{/if}} aria-label="Search">
     <button class="btn btn-outline-success my-2" type="submit">Search</button>
 </form>
 {{#if isSearch}}
@@ -18,4 +19,3 @@
     </a>
 </div>
 <script src="./../../js/projectSearch.js"></script>
-
