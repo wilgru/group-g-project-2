@@ -5,7 +5,6 @@ const clientData = require('./clientData.json');
 const managerData = require('./managerData.json');
 const projectData = require('./projectData.json');
 
-
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
@@ -16,13 +15,13 @@ const seedDatabase = async () => {
 
   for (const client of clientData) {
     await Client.create({
-      ...client
+      ...client,
     });
   }
 
   for (const project of projectData) {
     await Project.create({
-      ...project
+      ...project,
     });
   }
 
