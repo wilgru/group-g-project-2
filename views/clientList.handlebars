@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="./../../css/style.css"/>
+
+<!-- Client H1 header -->
 <h1>Clients</h1>
+
+<!-- Search input bar -->
 <form class="d-flex" role="search" id="search-client"> 
     <input class="form-control my-2 mr-2" type="search" id="search-input" placeholder="Search client's name" {{#if isSearch}}value="{{capitalise searchTerm}}"{{/if}} aria-label="Search">
     <button class="btn btn-outline-success my-2" type="submit">Search</button>
@@ -9,14 +13,19 @@
 {{else}}
 <h5 class="mt-4">{{get_length clients}} Records total</h5>
 {{/if}}
+
+<!-- List of clients dynamically rendered -->
 <div class="list-group mb-4">
+    <!-- Loop over each object in the clients array -->
     {{#each clients as |client|}}
     {{> clientCard}}
     {{/each}}
+
+    <!-- Button to add new client -->
     <a href="/client/add/" class="list-group-item list-group-item-action list-group-item-success">
         + Add new client
     </a>
 </div>
 
-
+ <!-- Script link for clientSearch.js file -->
 <script src="./../../js/clientSearch.js"></script>

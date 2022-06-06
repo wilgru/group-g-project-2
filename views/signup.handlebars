@@ -1,37 +1,40 @@
-<link rel="stylesheet" href="./css/style.css"/>
+<link rel="stylesheet" href="./css/style.css" />
 <div class="col-4 m-auto text-center" style="max-width: none;">
-    <form id="form-signup" class="mx-auto my-4">
-        <h1 class="h1 mb-3 fw-normal">ProjectHub</h1>
-        <p class="mb-3 fw-normal">Sign Up</p>
+	<form id="form-signup" class="mx-auto my-4">
+		<h1 class="h1 mb-3 fw-normal">ProjectHub</h1>
+		<p class="mb-3 fw-normal">Sign Up</p>
 
+		<!-- Signup form with inputs required -->
 		<div class="row mb-4">
 			<div class="form-floating col-6">
 				<label for="email-input">Name</label>
-				<input type="text" class="form-control" id="name-input" placeholder="John Doe">
+				<input type="text" class="form-control" id="name-input" placeholder="John Doe" />
 			</div>
 
-        	<div class="form-floating m-auto col-6">
-           		<label for="email-input">Email address</label>
-            	<input type="email" class="form-control" id="email-input" placeholder="name@example.com">
-        	</div>
+			<div class="form-floating m-auto col-6">
+				<label for="email-input">Email address</label>
+				<input type="email" class="form-control" id="email-input" placeholder="name@example.com" />
+			</div>
 		</div>
 
 		<div class="row mb-4">
 			<div class="form-floating col-6">
 				<label for="password-input">Password</label>
-				<input type="password" class="form-control" id="password-input" placeholder="Password">
+				<input type="password" class="form-control" id="password-input" placeholder="Password" />
 			</div>
-			
+
 			<div class="form-floating col-6">
 				<label for="password-input">Confirm Password</label>
-				<input type="password" class="form-control" id="confirm-password-input" placeholder="Confirm Password">
+				<input type="password" class="form-control" id="confirm-password-input" placeholder="Confirm Password" />
 			</div>
 		</div>
 
-
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
-        Already have an account? login <a href="/login">here</a>
-    </form>
+		<!-- Button to login with credentials -->
+		<button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+		Already have an account? login
+		<a href="/login">here</a>
+	</form>
 </div>
 
+<!-- Script link for signup.js file -->
 <script src="./js/signup.js"></script>
