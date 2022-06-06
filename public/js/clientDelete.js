@@ -1,16 +1,18 @@
 const delButtonHandler = async (event) => {
-	console.log(event);
-	const id = event.target.getAttribute("data-client-id");
+  // get id of current client
+  const id = event.target.getAttribute('data-client-id');
 
-	const response = await fetch(`/api/client/${id}`, {
-		method: "DELETE",
-	});
+  //delete client fetch request
+  const response = await fetch(`/api/client/${id}`, {
+    method: 'DELETE',
+  });
 
-	if (response.ok) {
-		document.location.replace("/client");
-	} else {
-		alert("Failed to delete client");
-	}
+  // if all goes well then redirect to client list, otherwise alert user
+  if (response.ok) {
+    document.location.replace('/client');
+  } else {
+    alert('Failed to delete client');
+  }
 };
 
-document.querySelector("#delete-client").addEventListener("click", delButtonHandler);
+document.querySelector('#delete-client').addEventListener('click', delButtonHandler);

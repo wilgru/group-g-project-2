@@ -1,39 +1,39 @@
-const loginForm = document.getElementById("form-login");
-const emailEl = document.getElementById("email-input");
-const passwordEl = document.getElementById("password-input");
+const loginForm = document.getElementById('form-login');
+const emailEl = document.getElementById('email-input');
+const passwordEl = document.getElementById('password-input');
 
 const loginHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    let emptyField = false;
-    const email = emailEl.value;
-    const password = passwordEl.value;
+  let emptyField = false;
+  const email = emailEl.value;
+  const password = passwordEl.value;
 
-    if (!email) {
-        emailEl.style.borderColor = "lightcoral";
-        emptyField = true
-    } 
+  if (!email) {
+    emailEl.style.borderColor = 'lightcoral';
+    emptyField = true;
+  }
 
-    if (!password) {
-        passwordEl.style.borderColor = "lightcoral";
-        emptyField = true
-    } 
+  if (!password) {
+    passwordEl.style.borderColor = 'lightcoral';
+    emptyField = true;
+  }
 
-    if (emptyField) return;
+  if (emptyField) return;
 
-    const loginData = await fetch('./api/manager/login', {
-        method: 'POST',
-        body: JSON.stringify({ email: email, password: password }),
-        headers: { 'Content-Type': 'application/json' }
-    })
+  const loginData = await fetch('./api/manager/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-    loginObj = await loginData.json();
-    if (!loginObj.pass) {
-        alert(loginObj.message);
-        return;
-    }
+  loginObj = await loginData.json();
+  if (!loginObj.pass) {
+    alert(loginObj.message);
+    return;
+  }
 
-    window.location = "/";
-}
+  window.location = '/';
+};
 
-loginForm.addEventListener("submit", loginHandler);
+loginForm.addEventListener('submit', loginHandler);

@@ -1,31 +1,33 @@
-const _ = require('lodash')
+const _ = require('lodash');
 
-const capitalise = (word) => {
-    return _.capitalize(word)
-}
+// capitalise first letter of a given string
+const capitalise = (word) => _.capitalize(word);
 
 const capitalise_first_word = (word) => {
-    const firstName = _.split(word, ' ')[0]
-    return _.capitalize(firstName)
-}
+  const firstName = _.split(word, ' ')[0];
+  return _.capitalize(firstName);
+};
 
-const pad = (word) => {
-    return _.padStart(word, 3, '0')
-}
+// pad a number with 2 leading zeros
+const pad = (word) => _.padStart(word, 3, '0');
 
+// format number to currency with comma seperated intervals
 const format_dollars = (value) => {
-    const formatter = Intl.NumberFormat('en-US', {style: 'currency', currency: 'AUD'});
+  const formatter = Intl.NumberFormat('en-US', { style: 'currency', currency: 'AUD' });
 
-    return formatter.format(value).replace('A$', '$');
-} 
+  return formatter.format(value).replace('A$', '$');
+};
 
-const get_length = (array) => {
-    return array.length
-}
+// return length of given array
+const get_length = (array) => array.length;
 
+// return dates in a prettier format
 const format_date = (date) => {
-    const newDate = new Date(date);
-    return `${newDate.getDate()}/${newDate.getMonth() + 1}/${newDate.getFullYear()}`;
-}
+  const newDate = new Date(date);
+  return `${newDate.getDate()}/${newDate.getMonth() + 1}/${newDate.getFullYear()}`;
+};
 
-module.exports = { format_date, format_dollars, capitalise, capitalise_first_word, get_length, pad };
+// export modules
+module.exports = {
+  format_date, format_dollars, capitalise, capitalise_first_word, get_length, pad,
+};
