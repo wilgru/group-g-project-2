@@ -6,5 +6,10 @@
 		</div>
 	</div>
 	<p class="mb-2">{{address}}, {{city}} {{zip}}, {{state}} </p>
-	<a href="/project/{{id}}" id="view">View project</a>
+	<div id="project-links-div">
+		<a href="/project/{{id}}" id="view" class="d-inline p-2">View Project</a>
+		<p id="delete-{{id}}" data-projectid="{{id}}"
+			style="color: red; text-decoration: underline; padding-left: 10px;"
+			class="d-inline p-2 text-red delete-p-class">Delete</p>
+	</div>
 </div>
