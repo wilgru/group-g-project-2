@@ -114,6 +114,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
 		const projectData = await Project.destroy({
 			where: {
 				id: req.params.id,
+				managerId: req.session.manager_id,
 			},
 		});
 

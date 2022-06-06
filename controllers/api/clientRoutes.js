@@ -32,6 +32,7 @@ router.delete("/:id", async (req, res) => {
 		const clientData = await Client.destroy({
 			where: {
 				id: req.params.id,
+				managerId: req.session.manager_id,
 			},
 		});
 
