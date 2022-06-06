@@ -1,9 +1,9 @@
 const searchButtonHandler = async (event) => {
-	event.preventDefault();
+  event.preventDefault();
 
-	const search = document.querySelector("#search-input").value;
+  const search = document.querySelector('#search-input').value;
 
-	document.location.replace(`/project/list/?q=${search}`);
+  document.location.replace(`/project/list/?q=${search}`);
 };
 
-document.getElementById("search-project").addEventListener("submit", searchButtonHandler);
+document.getElementById('search-project').addEventListener('submit', searchButtonHandler);

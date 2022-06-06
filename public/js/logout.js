@@ -13,5 +13,4 @@ const logout = async () => {
   }
 };
 
-
 logoutButton.addEventListener('click', logout);
