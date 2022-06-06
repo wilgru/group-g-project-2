@@ -127,7 +127,8 @@ function renderDomainSection() {
         "5th Percentile Price: $" + domainObject.suburbInfo['5thPercentileSoldPrice'] + '<br>' +
         "25th Percentile Price: $" + domainObject.suburbInfo['25thPercentileSoldPrice'] + '<br>' +
         "75th Percentile Price: $" + domainObject.suburbInfo['75thPercentileSoldPrice'] + '<br>' +
-        "95th Percentile Price: $" + domainObject.suburbInfo['95thPercentileSoldPrice'] + '<br>'
+        "95th Percentile Price: $" + domainObject.suburbInfo['95thPercentileSoldPrice'] + '<br>';
+    text.setAttribute("style", "padding-left: 10px;");
 
 
     domainSection.appendChild(header);
