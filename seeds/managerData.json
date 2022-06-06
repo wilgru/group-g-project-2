@@ -1,20 +1,24 @@
 [
   {
+    "id": "1",
     "name": "Tim P",
     "email": "tim@nambuccaeng.com",
     "password": "password12345"
   },
   {
+    "id": "2",
     "name": "Will G",
     "email": "willg@email.com",
     "password": "password12345"
   },
   {
+    "id": "3",
     "name": "Dean H",
     "email": "deanh@email.com",
     "password": "password12345"
   },
   {
+    "id": "4",
     "name": "Elsie L",
     "email": "elsiel@email.com",
     "password": "password12345"

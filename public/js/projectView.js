@@ -121,13 +121,13 @@ function getDomainSuburbInfo() {
 function renderDomainSection() {
     let header = document.createElement("h4");
     let text = document.createElement("p");
-    header.textContent = `Project Feasibility Info for : ${domainObject.suburb}`
-    text.innerHTML = "Median House Price: " + domainObject.suburbInfo.medianSoldPrice + "<br>" +
+    header.textContent = `Project Feasibility Info for: ${domainObject.suburb}`
+    text.innerHTML = "Median House Price: " + formatDollars(domainObject.suburbInfo.medianSoldPrice) + "<br>" +
         "Houses Sold (last quarter): " + domainObject.suburbInfo.numberSold + '<br>' +
-        "5th Percentile Price: $" + domainObject.suburbInfo['5thPercentileSoldPrice'] + '<br>' +
-        "25th Percentile Price: $" + domainObject.suburbInfo['25thPercentileSoldPrice'] + '<br>' +
-        "75th Percentile Price: $" + domainObject.suburbInfo['75thPercentileSoldPrice'] + '<br>' +
-        "95th Percentile Price: $" + domainObject.suburbInfo['95thPercentileSoldPrice'] + '<br>';
+        "5th Percentile Price: " + formatDollars(domainObject.suburbInfo['5thPercentileSoldPrice']) + '<br>' +
+        "25th Percentile Price: " + formatDollars(domainObject.suburbInfo['25thPercentileSoldPrice']) + '<br>' +
+        "75th Percentile Price: " + formatDollars(domainObject.suburbInfo['75thPercentileSoldPrice']) + '<br>' +
+        "95th Percentile Price: " + formatDollars(domainObject.suburbInfo['95thPercentileSoldPrice']) + '<br>';
     text.setAttribute("style", "padding-left: 10px;");
 
 
@@ -137,5 +137,12 @@ function renderDomainSection() {
 }
 
 // -------------------------------------------------------
+
+// format currency
+const formatDollars = (value) => {
+    const formatter = Intl.NumberFormat('en-US', {style: 'currency', currency: 'AUD'});
+
+    return formatter.format(value).replace('A$', '$');
+} 
 
 init();

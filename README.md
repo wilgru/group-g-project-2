@@ -7,7 +7,7 @@
 
 <!-- ## Deployed web address -->
 
-You can visit the deployed web application [here](https://dashboard.heroku.com/apps/project-2-group-g-projectub)
+You can visit the deployed web application [here](https://project-2-group-g-projectub.herokuapp.com/login)
 <br>
 
 ## Project Description
