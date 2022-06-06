@@ -15,13 +15,9 @@ router.post("/", async (req, res) => {
             dateCreated: req.body.dateCreated
         });
 
-        // Serialize data so the template can read it
-        const client = addClient.get({ plain: true });
-
         // Pass serialized data and session flag into template
         res.render("clientList", {
-            client,
-            logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in
         });
 
         console.log("addClient", addClient);
