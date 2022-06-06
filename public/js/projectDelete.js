@@ -3,12 +3,13 @@ const projectLinksDiv = document.querySelector("list-group");
 
 function projectDelete(projectID) {
     let thisProjectID = projectID;
-    console.log(thisProjectID)
+
+    console.log(window.location.pathname);
     fetch(`/project/delete/${thisProjectID}`, {
         method: 'DELETE',
     }).then((response) => {
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/project/list');
         } else {
             alert('Failed to delete project');
         }
