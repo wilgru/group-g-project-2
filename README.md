@@ -7,12 +7,12 @@
 
 <!-- ## Deployed web address -->
 
-You can visit the deployed web application [here]()
+You can visit the deployed web application [here](https://dashboard.heroku.com/apps/project-2-group-g-projectub)
 <br>
 
 ## Project Description
 
-Description Here
+An accessible customer relationship management system, which can be used for storing a company's client and project database.
 <br>
 
 ## Table of Contents
@@ -52,13 +52,19 @@ Technologies used:
 
 ## Usage Instructions
 
-1. To install necessary dependencies, run the following command: `npm install`.
+1. In the homepage, you will be directed to a login form. Please enter your credentials (email and password) to sign in. Alternatively, you can sign up if you are a new user.
 
-2.
+2. In the top left, the "ProjectHub" logo will navigate you to the dashboard.
 
-3.
+3. At the top left of the navigation, there are multiple selections.
 
-4.
+4. Click on "Home" to be taken back to the dashboard from anywhere in the site.
+
+5. Click on "Clients" to view a list of all clients in the ProjectHub database. You can then select "View File" to view a client's projects and personal details. At the top of the clients page, you can also search for a client using their first name.
+
+6. Click on "Projects" to view a list of all projects in the ProjectHub database. You can then select "View Project" to view a project's specifications and a map overview of the property location. In the project page, you can also opt to delete a project from the database.
+
+7. Certain functions are only available to users who have been authenticated upon logging in to the site. This includes editing and deleting stored data.
 
  <br>
 
@@ -73,6 +79,9 @@ Technologies used:
 - <strong>Export CSV data:</strong> Abitliy to export clients and projects database as an CSV file to be able to load into a spreadsheet and do calculations with
   <br>
 
+- <strong>Editing Clients:</strong> Option for a user to edit a client's personal details in the individual client page.
+  <br>
+
 <a name="Gallery"></a>
 
 ## Gallery
@@ -80,6 +89,7 @@ Technologies used:
 ![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo1.png)
 ![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo2.png)
 ![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo3.png)
+![image](https://github.com/wilgru/group-g-project-2-projecthub/blob/main/screenshots/demo4.png)
 <br>
 
 <a name="Resources"></a>
