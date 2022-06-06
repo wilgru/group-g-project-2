@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
         const client = addClient.get({ plain: true });
 
         // Pass serialized data and session flag into template
-        res.render("client", {
+        res.render("clientList", {
             client,
             logged_in: req.session.logged_in,
         });
