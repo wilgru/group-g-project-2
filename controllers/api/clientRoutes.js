@@ -15,9 +15,6 @@ router.post("/", async (req, res) => {
             dateCreated: req.body.dateCreated
         });
 
-        // Serialize data so the template can read it
-        const client = addClient.get({ plain: true });
-
         // Pass serialized data and session flag into template
         res.render("clientList", {
             logged_in: req.session.logged_in
@@ -35,6 +32,7 @@ router.delete("/:id", async (req, res) => {
 		const clientData = await Client.destroy({
 			where: {
 				id: req.params.id,
+				managerId: req.session.manager_id,
 			},
 		});
 
