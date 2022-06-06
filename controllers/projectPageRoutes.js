@@ -39,7 +39,12 @@ router.get("/list", withAuth, async (req, res) => {
 		}
 
 		// Serialize data so the template can read it
-		const projects = projectData.map((posts) => posts.get({ plain: true }));
+		const projects = projectData.map((project) => project.get({ plain: true }));
+
+		projects.map(proj => {
+			proj.managedByLoggedIn = (proj.managerId === req.session.manager_id)
+			return proj
+		});
 
 		// Pass serialized data and session flag into template
 		res.render("projectList", {
