@@ -1,6 +1,7 @@
 const { Client } = require('../../models');
 const router = require('express').Router();
 
+// Create a route for the Create Client Functionality
 router.post('/', async (req, res) => {
   try {
     const addClient = await Client.create({
@@ -27,15 +28,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Create a route for the Delete Client Functionality
 router.delete('/:id', async (req, res) => {
   try {
     const clientData = await Client.destroy({
       where: {
         id: req.params.id,
+        // Check if the client belongs to the manager trying to delete it
         managerId: req.session.manager_id,
       },
     });
-
+    // Error handling
     if (!clientData) {
       res.status(404).json({ message: 'No client found with this id!' });
       return;

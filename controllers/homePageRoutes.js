@@ -3,6 +3,7 @@ const _ = require('lodash');
 const withAuth = require('../utils/auth');
 const { Project, Manager, Client } = require('../models');
 
+// Create a route for the Home Page
 router.get('/', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -31,7 +32,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login', { layout: 'loginSignup.handlebars' });
 });
 

@@ -11,13 +11,13 @@ router.get('/list', withAuth, async (req, res) => {
     let searchMessage = '';
     let searchTerm = '';
 
-    // if ther are query params
+    // if there are query params
     if (req.query.q) {
       isSearch = true;
       searchTerm = req.query.q;
 
       console.log(searchTerm);
-      // Get one projects by their first name
+      // Get one project by their first name
       projectData = await Project.findAll({
         where: {
           projectName: {
@@ -60,6 +60,8 @@ router.get('/list', withAuth, async (req, res) => {
   }
 });
 
+
+// Create a route for the Create Client Functionality
 router.get('/add', withAuth, async (req, res) => {
   try {
     const projectViewDate = await Client.findAll({
@@ -86,6 +88,8 @@ router.get('/add', withAuth, async (req, res) => {
   }
 });
 
+
+// Create a route for the View One Project Functionality
 router.get('/:id', withAuth, async (req, res) => {
   try {
     // Get one projects by their first name
@@ -113,6 +117,7 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Create a route for the Delete a Project Functionality
 router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.destroy({
@@ -129,7 +134,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
 
     res.status(200).json(projectData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json({ message: 'You do not have permission to delete this project.' });
   }
 });
 

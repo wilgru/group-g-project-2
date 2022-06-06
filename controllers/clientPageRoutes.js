@@ -3,6 +3,7 @@ const { Op, Sequelize } = require('sequelize');
 const withAuth = require('../utils/auth');
 const { Project, Client } = require('../models');
 
+// Create a route for the Display Client List Functionality
 router.get('/list', withAuth, async (req, res) => {
   try {
     let clientData;
@@ -10,12 +11,11 @@ router.get('/list', withAuth, async (req, res) => {
     let searchMessage = '';
     let searchTerm = '';
 
-    // if ther are query params
+    // if there are query params
     if (req.query.q) {
       isSearch = true;
       searchTerm = req.query.q;
 
-      console.log(searchTerm);
       // Get one clients by their first name
       clientData = await Client.findAll({
         where: {
@@ -54,6 +54,7 @@ router.get('/list', withAuth, async (req, res) => {
   }
 });
 
+// Create a route for the Add Client Page
 router.get('/add', withAuth, (req, res) => {
   res.render('clientAdd', {
     logged_in: req.session.logged_in,
@@ -63,7 +64,7 @@ router.get('/add', withAuth, (req, res) => {
 
 router.get('/view/:id', withAuth, async (req, res) => {
   try {
-    // Get one clients by their first name
+    // Get one client by their first name
     const clientViewData = await Client.findByPk(req.params.id, {
       include: {
         model: Project,
