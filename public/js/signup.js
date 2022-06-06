@@ -1,62 +1,70 @@
-const form = document.getElementById('form-signup');
+//Retrieves HTML elements by Id
+const form = document.getElementById("form-signup");
+const nameEl = document.getElementById("name-input");
+const emailEl = document.getElementById("email-input");
+const passwordEl = document.getElementById("password-input");
+const confirmPasswordEl = document.getElementById("confirm-password-input");
 
-const nameEl = document.getElementById('name-input');
-const emailEl = document.getElementById('email-input');
-const passwordEl = document.getElementById('password-input');
-const confirmPasswordEl = document.getElementById('confirm-password-input');
-
+//Handler function that accepts user input upon signing up
 const formHandler = async (event) => {
-  event.preventDefault();
+	event.preventDefault();
 
-  let emptyField = false;
+	let emptyField = false;
 
-  // Collect values from the login form
-  const nameVal = nameEl.value.trim();
-  const emailVal = emailEl.value.trim();
-  const passwordVal = passwordEl.value.trim();
-  const confirmPasswordVal = confirmPasswordEl.value.trim();
+	// Collect values from the login form
+	const nameVal = nameEl.value.trim();
+	const emailVal = emailEl.value.trim();
+	const passwordVal = passwordEl.value.trim();
+	const confirmPasswordVal = confirmPasswordEl.value.trim();
 
-  if (!nameVal) {
-    nameEl.style.borderColor = 'lightcoral';
-    emptyField = true;
-  }
+	//Prevents a null entry from user
+	if (!nameVal) {
+		nameEl.style.borderColor = "lightcoral";
+		emptyField = true;
+	}
 
-  if (!emailVal) {
-    emailEl.style.borderColor = 'lightcoral';
-    emptyField = true;
-  }
+	//Prevents a null entry from user
+	if (!emailVal) {
+		emailEl.style.borderColor = "lightcoral";
+		emptyField = true;
+	}
 
-  if (!passwordVal) {
-    passwordEl.style.borderColor = 'lightcoral';
-    emptyField = true;
-  }
+	//Prevents a null entry from user
+	if (!passwordVal) {
+		passwordEl.style.borderColor = "lightcoral";
+		emptyField = true;
+	}
 
-  if (!confirmPasswordVal) {
-    confirmPasswordEl.style.borderColor = 'lightcoral';
-    emptyField = true;
-  }
+	//Prevents a null entry from user
+	if (!confirmPasswordVal) {
+		confirmPasswordEl.style.borderColor = "lightcoral";
+		emptyField = true;
+	}
 
-  if (passwordVal != confirmPasswordVal) {
-    password.style.borderColor = 'lightcoral';
-    confirmPasswordEl.style.borderColor = 'lightcoral';
-    emptyField = true;
-  }
+	//Prevents a null entry from user
+	if (passwordVal != confirmPasswordVal) {
+		password.style.borderColor = "lightcoral";
+		confirmPasswordEl.style.borderColor = "lightcoral";
+		emptyField = true;
+	}
 
-  if (emptyField) return;
+	if (emptyField) return;
 
-  const signupData = await fetch('/api/manager/signup', {
-    method: 'POST',
-    body: JSON.stringify({ name: nameVal, email: emailVal, password: passwordVal }),
-    headers: { 'Content-Type': 'application/json' },
-  });
+	//Fetches manager signup api page
+	const signupData = await fetch("/api/manager/signup", {
+		method: "POST",
+		//Stringifies JSON input
+		body: JSON.stringify({ name: nameVal, email: emailVal, password: passwordVal }),
+		headers: { "Content-Type": "application/json" },
+	});
 
-  const signupObj = await signupData.json();
-  if (!signupObj.pass) {
-    alert(signupObj.message);
-    return;
-  }
+	const signupObj = await signupData.json();
+	if (!signupObj.pass) {
+		alert(signupObj.message);
+		return;
+	}
 
-  // window.location.replace("/");
-  window.location = '/';
+	//Renders homepage
+	window.location = "/";
 };
-form.addEventListener('submit', formHandler);
+form.addEventListener("submit", formHandler);

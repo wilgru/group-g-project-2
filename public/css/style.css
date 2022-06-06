@@ -15,6 +15,7 @@
 	background-color: #6c92ab;
 }
 
+/* adds padding to the navbar */
 .navbar {
 	margin-left: 60px;
 	margin-right: 60px;
@@ -59,6 +60,7 @@ h2 {
 	margin-bottom: 80px;
 }
 
+/* adds colour to the add button */
 #add {
 	background-color: #04203c;
 	color: azure;
