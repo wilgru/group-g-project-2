@@ -6,15 +6,18 @@ router.get("/");
 router.post("/", async (req, res) => {
     try {
         const addClient = await Client.create({
-            clientName: req.body.clientName,
-            location: req.body.location,
-            budget: req.body.budget,
-            clientId: req.body.clientId,
-            notes: req.body.notes,
+            firstName: req.body.clientName,
+            lastName: req.body.clientName,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            zip: req.body.zip,
+            phone: req.body.phone,
+            email: req.body.email
         });
 
         // Serialize data so the template can read it
-        const Client = addClient.get({ plain: true });
+        const client = addClient.get({ plain: true });
 
         // Pass serialized data and session flag into template
         res.render("client", {
