@@ -2,14 +2,14 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   // get all of users inputs
-  const firstName = document.querySelector('#inputFirstName').value;
-  const lastName = document.querySelector('#inputLastName').value;
-  const phone = document.querySelector('#inputPhone').value;
-  const email = document.querySelector('#inputEmail').value;
-  const address = document.querySelector('#inputAddress').value;
-  const city = document.querySelector('#inputCity').value;
-  const state = document.querySelector('#inputState').value;
-  const zip = document.querySelector('#inputZip').value;
+  const firstName = document.querySelector('#input-first-name').value;
+  const lastName = document.querySelector('#input-last-name').value;
+  const phone = document.querySelector('#input-phone').value;
+  const email = document.querySelector('#input-email').value;
+  const address = document.querySelector('#input-address').value;
+  const city = document.querySelector('#input-city').value;
+  const state = document.querySelector('#input-state').value;
+  const zip = document.querySelector('#input-zip').value;
   const dateCreated = new Date();
 
   // make sure no field is left empty

@@ -2,15 +2,15 @@ const newFormHandler = async (event) => {
 	event.preventDefault();
 
 	//Variables of a project defined by their correspinding Id values
-	const projectName = document.querySelector("#inputProjectName").value;
-	const budget = document.querySelector("#inputBudget").value;
-	const clientId = document.querySelector("#inputClient").value;
-	const managerId = document.querySelector("#inputManager").value;
-	const address = document.querySelector("#inputAddress").value;
-	const city = document.querySelector("#inputCity").value;
-	const state = document.querySelector("#inputState").value;
-	const zip = document.querySelector("#inputZip").value;
-	const notes = document.querySelector("#inputDescription").value;
+	const projectName = document.querySelector("#input-project-name").value;
+	const budget = document.querySelector("#input-budget").value;
+	const clientId = document.querySelector("#input-client").value;
+	const managerId = document.querySelector("#input-manager").value;
+	const address = document.querySelector("#input-address").value;
+	const city = document.querySelector("#input-city").value;
+	const state = document.querySelector("#input-state").value;
+	const zip = document.querySelector("#input-zip").value;
+	const notes = document.querySelector("#input-description").value;
 	const date = new Date();
 
 	//If statement lists out variables as the condition to be run by
