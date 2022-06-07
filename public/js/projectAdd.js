@@ -41,7 +41,7 @@ const newFormHandler = async (event) => {
 		if (response.ok) {
 			document.location.replace("/project/list");
 		} else {
-			alert("Failed to create project");
+			alert(response.statusText);
 		}
 	}
 };
