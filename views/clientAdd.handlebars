@@ -1,45 +1,45 @@
 <link rel="stylesheet" href="./../../css/style.css" />
 <h1>Client Form</h1>
 
+<!-- Form to add a new client -->
 <form class="form new-client-form">
     <div class="form-row">
         <div class="form-group col-md-6">
+            <!-- First name input -->
             <label for="client-name">First Name:</label>
             <input type="text" class="form-control" id="inputFirstName" placeholder="Please enter name" />
         </div>
         <div class="form-group col-md-6">
+            <!-- Last name input -->
             <label for="client-name">Last Name:</label>
             <input type="text" class="form-control" id="inputLastName" placeholder="Please enter name" />
         </div>
     </div>
-    {{!-- <div class="form-group">
-        <label for="project">Project:</label>
-        <input class="form-input" type="text" id="project" name="project" />
-    </div>
-    <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-    </div> --}}
     <div class="form-row">
         <div class="form-group col-md-6">
+            <!-- Email input -->
             <label for="client-name">Email:</label>
             <input type="email" class="form-control" id="inputEmail" placeholder="Please enter email" />
         </div>
         <div class="form-group col-md-6">
+            <!-- Phone number input -->
             <label for="client-name">Phone:</label>
             <input type="text" class="form-control" id="inputPhone" placeholder="Please enter phone" />
         </div>
     </div>
     <div class="form-group">
+        <!-- Address input -->
         <label for="inputAddress">Address</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
+        <!-- City input -->
             <label for="inputCity">City</label>
             <input type="text" class="form-control" id="inputCity" placeholder="Sydney" />
         </div>
         <div class="form-group col-md-4">
+            <!-- State dropdown menu -->
             <label for="inputState">State</label>
             <select id="inputState" class="form-control" required>
                 <option disabled selected>Choose...</option>
@@ -52,11 +52,15 @@
             </select>
         </div>
         <div class="form-group col-md-2">
+            <!-- Zip code input -->
             <label for="inputZip">Zip</label>
             <input type="number" class="form-control" id="inputZip" placeholder="2000" />
         </div>
         <div class="form-group">
+            <!-- Button to submit form -->
             <button type="submit" class="btn" id="add">Create</button>
         </div>
+        <!-- Script link for clientAdd.js file -->
+        <script src="./../../js/clientAdd.js"></script>
 </form>
 </div>

@@ -1,24 +1,31 @@
-<link rel="stylesheet" href="./css/style.css"/>
+<link rel="stylesheet" href="./css/style.css" />
 <div class="col-4 m-auto text-center" style="max-width: none;">
-    <form id="form-login" class="mx-auto my-4 col-6">
-        <h1 class="h1 mb-3 fw-normal">ProjectHub</h1>
-        <p class="mb-3 fw-normal">Log in</p>
 
-        <div class="form-floating">
-            <label for="email-input">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="name@example.com">
-        </div>
-		<br>
-        
-        <div class="form-floating">
-            <label for="password-input">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-        </div>
-        <br>
+	<!-- Login form with inputs required -->
+	<form id="form-login" class="mx-auto my-4 col-6">
+		<h1 class="h1 mb-3 fw-normal">ProjectHub</h1>
+		<p class="mb-3 fw-normal">Log in</p>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-        Dont have an account? sign up <a href="/signup">here</a>
-    </form>
+		<div class="form-floating">
+			<label for="email-input">Email address</label>
+			<input type="email" class="form-control" id="email-input" placeholder="name@example.com" />
+		</div>
+		<br />
+
+		<div class="form-floating">
+			<label for="password-input">Password</label>
+			<input type="password" class="form-control" id="password-input" placeholder="Password" />
+		</div>
+		<br />
+
+		<!-- Button to login on click -->
+		<button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+		Dont have an account? sign up
+
+		<!-- Link to sign up -->
+		<a href="/signup">here</a>
+	</form>
 </div>
 
+<!-- Script link for login.js file -->
 <script src="./js/login.js"></script>

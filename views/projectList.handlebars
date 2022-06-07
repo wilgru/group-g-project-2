@@ -3,19 +3,25 @@
 <form class="d-flex" role="search" id="search-project">
     <input class="form-control my-2 mr-2" type="search" id="search-input" placeholder="Search project's name" {{#if
         isSearch}}value="{{capitalise searchTerm}}" {{/if}} aria-label="Search">
+          <!-- Button to search by keyword -->
     <button class="btn btn-outline-success my-2" type="submit">Search</button>
 </form>
 {{#if isSearch}}
 <h5 class="mt-4">{{searchMessage}}</h5>
 {{else}}
+  <!-- Dynamically renders total projects list -->
 <h5 class="mt-4">{{get_length projects}} Records total</h5>
 {{/if}}
 <div class="list-group mb-4">
+      <!-- Loop over each object in the projects array -->
     {{#each projects as |project|}}
     {{> projectCard}}
     {{/each}}
+      <!-- Link to add new project -->
     <a href="/project/add/" class="list-group-item list-group-item-action list-group-item-success">
         + Add new Project
     </a>
 </div>
+
+<!-- Script link for projectSearch.js file -->
 <script src="./../../js/projectSearch.js"></script>

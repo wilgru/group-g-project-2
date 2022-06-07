@@ -1,15 +1,18 @@
 <link rel="stylesheet" href="./../../css/style.css" />
 <h1>New Project Form</h1>
 
+<!-- Form to add a new client -->
 <form class="form-project-add">
 	<div class="form-row">
 		<div class="form-group col-md-12">
+			<!-- Project name input -->
 			<label for="formGroupExampleInput">Project Name</label>
 			<input type="text" class="form-control" id="inputProjectName" placeholder="Project name here..." required />
 		</div>
 	</div>
 	<div class="form-row">
 		<div class="form-group col-md-4">
+			<!-- Project budget input -->
 			<label for="inputBudget">Project Budget</label>
 			<input type="number" class="form-control" id="inputBudget" placeholder="$1,000,000" required />
 		</div>
@@ -17,6 +20,7 @@
 			<label for="inputBudget">Client</label>
 			<select id="inputClient" class="form-control" required>
 				<option disabled selected>Choose...</option>
+				<!-- Loop over each object in the clients array -->
 				{{#each client as |c|}}
 					<option value="{{c.id}}">{{c.firstName}} {{c.lastName}}</option>
 				{{/each}}
@@ -26,12 +30,15 @@
 			<label for="inputBudget">Manager</label>
 			<select id="inputManager" class="form-control" required>
 				<option disabled selected>Choose...</option>
+				<!-- Loop over each object in the managers array -->
 				{{#each manager as |m|}}
 					<option value="{{m.id}}">{{m.name}}</option>
 				{{/each}}
 			</select>
 		</div>
 	</div>
+
+	<!-- Form to add a new project -->
 	<div class="form-row">
 		<div class="form-group col-md-12">
 			<label for="inputAddress">Address</label>
@@ -44,6 +51,7 @@
 		<div class="form-group col-md-4">
 			<label for="inputState">State</label>
 			<select id="inputState" class="form-control" required>
+				<!-- Drop down menu for AUS states -->
 				<option disabled selected>Choose...</option>
 				<option>NSW</option>
 				<option>WA</option>
@@ -54,17 +62,21 @@
 			</select>
 		</div>
 		<div class="form-group col-md-2">
+			<!-- Zip code input -->
 			<label for="inputZip">Zip</label>
 			<input type="text" class="form-control" id="inputZip" placeholder="2000" required />
 		</div>
 	</div>
 	<div class="form-row">
 		<div class="form-group col-12">
+			<!-- Project details input -->
 			<label for="inputDescription">Project Details</label>
 			<textarea type="text" class="form-control" id="inputDescription" placeholder="Project description here..." required></textarea>
 		</div>
 	</div>
+	<!-- Button to add new project -->
 	<button type="submit" class="btn" id="add">Add Project</button>
 </form>
 
+<!-- Script link for projectAdd.js file -->
 <script src="./../../js/projectAdd.js"></script>

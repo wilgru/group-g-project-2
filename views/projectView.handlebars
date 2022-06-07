@@ -1,27 +1,28 @@
 <link rel="stylesheet" href="./../../../css/style.css" />
 <section id="main-content-section" class="card">
-    <h1 class="card-title" style="text-decoration: underline;">{{project.projectName}}</h1>
-    <p style="padding-left: 10px;">Job Number: {{project.id}}</p>
-    <p id="street_address" style="padding-left: 10px;">Address: {{project.address}}</p>
-    <p id="city_address" style="padding-left: 10px;">City: {{project.city}}</p>
-    <p style="padding-left: 10px;">State: {{project.state}}</p>
-    <p style="padding-left: 10px;">Budget: {{format_dollars project.budget}}</p>
-    <p style="padding-left: 10px;">Client: {{project.client.firstName}} {{project.client.lastName}}</p>
-    <p style="padding-left: 10px;">Manager: {{project.manager.name}}</p>
-    <p style="padding-left: 10px;">Notes: {{project.notes}}</p>
-
+	<!-- Dynamically renders project specifications -->
+	<h1 class="card-title" style="text-decoration: underline;">{{project.projectName}}</h1>
+	<p style="padding-left: 10px;">Job Number: {{project.id}}</p>
+	<p id="street_address" style="padding-left: 10px;">Address: {{project.address}}</p>
+	<p id="city_address" style="padding-left: 10px;">City: {{project.city}}</p>
+	<p style="padding-left: 10px;">State: {{project.state}}</p>
+	<p style="padding-left: 10px;">Budget: {{format_dollars project.budget}}</p>
+	<p style="padding-left: 10px;">Client: {{project.client.firstName}} {{project.client.lastName}}</p>
+	<p style="padding-left: 10px;">Manager: {{project.manager.name}}</p>
+	<p style="padding-left: 10px;">Notes: {{project.notes}}</p>
 </section>
+
+<!-- Section to hold project map -->
 <section>
-    <h3>Project Map</h3>
-    <div class="container">
-        <div class="row">
-            <!--The div element for the google map -->
-            <div id="map" class="card col-md-6"></div>
-            <div id="domain-section" class="card col-md-6"></div>
-        </div>
-    </div>
+	<h3>Project Map</h3>
+	<div class="container">
+		<div class="row">
+			<!--The div element for the google map -->
+			<div id="map" class="card col-md-6"></div>
+			<div id="domain-section" class="card col-md-6"></div>
+		</div>
+	</div>
 </section>
 
-
-
+<!-- Script link for projectView.js file -->
 <script src="/js/projectView.js" defer></script>
