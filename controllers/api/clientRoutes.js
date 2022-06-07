@@ -1,3 +1,4 @@
+const { add } = require('lodash');
 const { Client } = require('../../models');
 const router = require('express').Router();
 
@@ -16,10 +17,12 @@ router.post('/', async (req, res) => {
       dateCreated: req.body.dateCreated,
     });
 
+    console.log('\n\n')
+    console.log(addClient)
+    console.log('\n\n')
+
     // Pass serialized data and session flag into template
-    res.render('clientList', {
-      logged_in: req.session.logged_in,
-    });
+    res.redirect('clientList');
 
     // res.status(200).json(addClient);
   } catch (err) {
