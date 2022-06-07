@@ -4,7 +4,6 @@ const router = require('express').Router();
 
 // Create Route for Manager Login Function
 router.post('/login', async (req, res) => {
-  console.log(req.body);
   try {
     const managerData = await Manager.findOne({
       where: {
