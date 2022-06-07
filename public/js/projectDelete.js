@@ -3,6 +3,10 @@ const projectLinksDiv = document.querySelector("list-group");
 
 //Function to delete a project by Id
 function projectDelete(projectID) {
+	//prompt user for confirmation
+	const confirmation = confirm("Are you sure you want to delete this project? This action cannot be undone.")
+	if (!confirmation) return;
+
 	const thisProjectID = projectID;
 
 	fetch(`/project/delete/${thisProjectID}`, {

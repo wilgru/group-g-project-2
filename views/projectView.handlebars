@@ -1,15 +1,21 @@
 <link rel="stylesheet" href="./../../../css/style.css" />
 <section id="main-content-section" class="card">
-	<!-- Dynamically renders project specifications -->
 	<h1 class="card-title" style="text-decoration: underline;">{{project.projectName}}</h1>
-	<p style="padding-left: 10px;">Job Number: {{project.id}}</p>
-	<p id="street_address" style="padding-left: 10px;">Address: {{project.address}}</p>
-	<p id="city_address" style="padding-left: 10px;">City: {{project.city}}</p>
-	<p style="padding-left: 10px;">State: {{project.state}}</p>
-	<p style="padding-left: 10px;">Budget: {{format_dollars project.budget}}</p>
-	<p style="padding-left: 10px;">Client: {{project.client.firstName}} {{project.client.lastName}}</p>
-	<p style="padding-left: 10px;">Manager: {{project.manager.name}}</p>
-	<p style="padding-left: 10px;">Notes: {{project.notes}}</p>
+	<div class="row">
+		<!-- Dynamically renders project specifications -->
+		<div class="col-6">
+			<p style="padding-left: 10px;">Job Number: {{pad project.id}}</p>
+			<p id="street_address" style="padding-left: 10px;">Address: {{project.address}}</p>
+			<p id="city_address" style="padding-left: 10px;">City: {{project.city}} {{project.zip}}</p>
+			<p style="padding-left: 10px;">State: {{project.state}}</p>
+		</div>
+		<div class="col-6">
+			<p style="padding-left: 10px;">Budget: {{format_dollars project.budget}}</p>
+			<p style="padding-left: 10px;">Client: {{project.client.firstName}} {{project.client.lastName}}</p>
+			<p style="padding-left: 10px;">Manager: {{project.manager.name}}</p>
+			<p style="padding-left: 10px;">Notes: {{project.notes}}</p>
+		</div>
+	</div>
 </section>
 
 <!-- Section to hold project map -->
@@ -19,7 +25,7 @@
 		<div class="row">
 			<!--The div element for the google map -->
 			<div id="map" class="card col-md-6"></div>
-			<div id="domain-section" class="card col-md-6"></div>
+			<div id="domain-section" class="card col-md-6 p-2"></div>
 		</div>
 	</div>
 </section>

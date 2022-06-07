@@ -7,18 +7,18 @@
 		<div class="form-group col-md-12">
 			<!-- Project name input -->
 			<label for="formGroupExampleInput">Project Name</label>
-			<input type="text" class="form-control" id="inputProjectName" placeholder="Project name here..." required />
+			<input type="text" class="form-control" id="input-project-name" placeholder="Project name here..." required />
 		</div>
 	</div>
 	<div class="form-row">
 		<div class="form-group col-md-4">
 			<!-- Project budget input -->
-			<label for="inputBudget">Project Budget</label>
-			<input type="number" class="form-control" id="inputBudget" placeholder="$1,000,000" required />
+			<label for="input-budget">Project Budget</label>
+			<input type="number" class="form-control" id="input-budget" placeholder="$1,000,000" required />
 		</div>
 		<div class="form-group col-md-4">
-			<label for="inputBudget">Client</label>
-			<select id="inputClient" class="form-control" required>
+			<label for="input-client">Client</label>
+			<select id="input-client" class="form-control" required>
 				<option disabled selected>Choose...</option>
 				<!-- Loop over each object in the clients array -->
 				{{#each client as |c|}}
@@ -27,8 +27,8 @@
 			</select>
 		</div>
 		<div class="form-group col-md-4">
-			<label for="inputBudget">Manager</label>
-			<select id="inputManager" class="form-control" required>
+			<label for="input-manager">Manager</label>
+			<select id="input-manager" class="form-control" required>
 				<option disabled selected>Choose...</option>
 				<!-- Loop over each object in the managers array -->
 				{{#each manager as |m|}}
@@ -41,16 +41,16 @@
 	<!-- Form to add a new project -->
 	<div class="form-row">
 		<div class="form-group col-md-12">
-			<label for="inputAddress">Address</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required />
+			<label for="input-address">Address</label>
+			<input type="text" class="form-control" id="input-address" placeholder="1234 Main St" required />
 		</div>
 		<div class="form-group col-md-6">
-			<label for="inputCity">City</label>
-			<input type="text" class="form-control" id="inputCity" placeholder="Sydney" required />
+			<label for="input-city">City</label>
+			<input type="text" class="form-control" id="input-city" placeholder="Sydney" required />
 		</div>
 		<div class="form-group col-md-4">
-			<label for="inputState">State</label>
-			<select id="inputState" class="form-control" required>
+			<label for="input-state">State</label>
+			<select id="input-state" class="form-control" required>
 				<!-- Drop down menu for AUS states -->
 				<option disabled selected>Choose...</option>
 				<option>NSW</option>
@@ -63,15 +63,15 @@
 		</div>
 		<div class="form-group col-md-2">
 			<!-- Zip code input -->
-			<label for="inputZip">Zip</label>
-			<input type="text" class="form-control" id="inputZip" placeholder="2000" required />
+			<label for="input-zip">Zip</label>
+			<input type="text" class="form-control" id="input-zip" placeholder="2000" required />
 		</div>
 	</div>
 	<div class="form-row">
 		<div class="form-group col-12">
 			<!-- Project details input -->
-			<label for="inputDescription">Project Details</label>
-			<textarea type="text" class="form-control" id="inputDescription" placeholder="Project description here..." required></textarea>
+			<label for="input-description">Project Details</label>
+			<textarea type="text" class="form-control" id="input-description" placeholder="Project description here..." required></textarea>
 		</div>
 	</div>
 	<!-- Button to add new project -->

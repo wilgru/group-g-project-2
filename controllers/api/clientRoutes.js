@@ -33,9 +33,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const clientData = await Client.destroy({
       where: {
-        id: req.params.id,
-        // Check if the client belongs to the manager trying to delete it
-        managerId: req.session.manager_id,
+        id: req.params.id
       },
     });
     // Error handling
