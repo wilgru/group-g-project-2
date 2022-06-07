@@ -7,7 +7,7 @@
 
 <!-- ## Deployed web address -->
 
-You can visit the deployed web application [here](https://project-2-group-g-projectub.herokuapp.com/login)
+You can visit the deployed web application [here](https://projecthub-crm.herokuapp.com/)
 <br>
 
 ## Project Description
