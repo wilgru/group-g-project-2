@@ -16,7 +16,7 @@ function projectDelete(projectID) {
 			//Renders project list with project removed
 			document.location.replace("/project/list");
 		} else {
-			alert("Failed to delete project");
+			alert(response.statusText);
 		}
 	});
 }

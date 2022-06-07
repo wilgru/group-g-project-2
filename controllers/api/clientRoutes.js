@@ -1,3 +1,4 @@
+const { add } = require('lodash');
 const { Client } = require('../../models');
 const router = require('express').Router();
 
