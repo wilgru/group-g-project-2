@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-// create new class, add method to check password
+// Create new Manager Model class, add method to check password
 class Manager extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);

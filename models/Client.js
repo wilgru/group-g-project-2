@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Client extends Model {}
+// Create the Client Model
+class Client extends Model { }
 
 Client.init(
   {
@@ -19,10 +20,6 @@ Client.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // location: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false
-    // },
     address: {
       type: DataTypes.STRING,
       allowNull: false,

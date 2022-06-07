@@ -4,6 +4,7 @@ const Client = require('./Client');
 const Project = require('./Project');
 const ClientProject = require('./ClientProject');
 
+// Create the Relationships between the Models
 Client.hasMany(Project, {
   foreignKey: 'clientId',
   onDelete: 'CASCADE',

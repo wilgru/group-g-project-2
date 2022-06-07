@@ -2,6 +2,7 @@ const { Manager } = require('../../models');
 const withAuth = require('../../utils/auth');
 const router = require('express').Router();
 
+// Create Route for Manager Login Function
 router.post('/login', async (req, res) => {
   console.log(req.body);
   try {
@@ -15,7 +16,7 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ pass: false, message: 'incorrect email or password. Please check your spelling and try again.' });
       return;
     }
-
+    // Check Correct Password
     const passwordStatus = managerData.checkPassword(req.body.password);
 
     if (!passwordStatus) {
@@ -34,17 +35,15 @@ router.post('/login', async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    // res.status(500).send(error);
   }
 });
 
+// Create Route for new Manager Signup Function
 router.post('/signup', async (req, res) => {
   try {
     const newManagerData = await Manager.create(req.body);
     const newManager = await newManagerData.get({ plain: true });
-
-    console.log(newManager);
-
+    // Make an express session
     req.session.save(() => {
       req.session.manager_id = newManager.id;
       req.session.manager_name = newManager.name;
@@ -62,7 +61,9 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// Create Route for Logout Function
 router.post('/logout', withAuth, async (req, res) => {
+  // Delete the session
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();

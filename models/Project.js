@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Create the Project Model
 class Project extends Model { }
 
 Project.init(
@@ -15,10 +16,6 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // location: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false
-    // },
     address: {
       type: DataTypes.STRING,
       allowNull: false,

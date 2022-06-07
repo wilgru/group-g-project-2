@@ -1,13 +1,13 @@
 [
   {
     "projectName": "Suspension Bridge",
-    "address": "Perry St",
-    "city": "San Francisco",
-    "state": "California",
-    "zip": "1111",
+    "address": "44 Princess Street",
+    "city": "Macksville",
+    "state": "NSW",
+    "zip": "2447",
     "budget": 1000000,
     "clientId": 1,
-    "managerId": 2,
+    "managerId": 1,
     "dateCreated": "2022-02-28"
   },
   {

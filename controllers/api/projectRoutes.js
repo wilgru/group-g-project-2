@@ -4,6 +4,7 @@ const router = require('express').Router();
 
 router.get('/');
 
+// Create a route for the Create Project Functionality
 router.post('/', withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({
@@ -27,8 +28,6 @@ router.post('/', withAuth, async (req, res) => {
       projects,
       logged_in: req.session.logged_in,
     });
-
-    console.log('newProject', newProject);
     res.status(200).json(newProject);
   } catch (err) {
     console.error(err);
