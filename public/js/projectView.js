@@ -98,7 +98,6 @@ function getDomainLocationID() {
 		.then((data) => {
 			domainObject.ids = data[0].ids;
 			domainObject.suburbID = domainObject.ids[2].id;
-			console.log(domainObject);
 		});
 }
 
@@ -111,7 +110,6 @@ function getDomainSuburbInfo() {
 		.then((data) => {
 			domainObject.suburb = data.header.suburb;
 			domainObject.suburbInfo = data.series.seriesInfo[3].values;
-			console.log(domainObject.suburbInfo);
 		});
 }
 
