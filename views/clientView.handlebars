@@ -34,6 +34,7 @@
  <!-- List of projects connected to client -->
     <div class="col-lg-8 col-sm-12 col-12">
       <div class="list-group">
+        <!-- Loop over each object in the projects array -->
         {{#each client.projects as |project|}}
         {{> projectCard}}
         {{/each}}

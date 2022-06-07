@@ -21,18 +21,34 @@
 	margin-right: 60px;
 }
 
-/* adds colour to the titles */
+/* adds properties to the titles */
 h1 {
 	color: #234d74;
 	text-align: center;
 	padding: 20px;
 }
 
-/* adds colour to the subtitles */
+/* adds properties to the subtitles */
 h2 {
 	color: #234d74;
 	text-align: center;
 	padding: 20px;
+}
+
+/* adds properties to the subtitles */
+h3 {
+	color: #234d74;
+	text-align: left;
+	padding: 10px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+/* adds properties to the subtitles */
+h4 {
+	color: #234d74;
+	padding: 10px;
+	margin-top: 10px;
 }
 
 /* Adds colour to welcome message */
@@ -60,8 +76,14 @@ h2 {
 	margin-bottom: 80px;
 }
 
-/* adds colour to the add button */
+/* Adds colour to the add button */
 #add {
 	background-color: #04203c;
 	color: azure;
+}
+
+/* Properties of project specifications */
+.row {
+	padding: 20px;
+	text-align: center;
 }
