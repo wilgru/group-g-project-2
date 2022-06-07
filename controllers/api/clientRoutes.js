@@ -17,14 +17,8 @@ router.post('/', async (req, res) => {
       dateCreated: req.body.dateCreated,
     });
 
-    console.log('\n\n')
-    console.log(addClient)
-    console.log('\n\n')
-
     // Pass serialized data and session flag into template
-    // res.redirect('/client/list');
-
-    res.status(200).json(addClient);
+    res.status(200).end();
   } catch (err) {
     console.error(err);
     res.status(400).json(err);

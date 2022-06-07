@@ -20,15 +20,8 @@ router.post('/', withAuth, async (req, res) => {
       dateCreated: req.body.dateCreated,
     });
 
-    // Serialize data so the template can read it
-    const projects = newProject.get({ plain: true });
-
     // Pass serialized data and session flag into template
-    res.render('projects', {
-      projects,
-      logged_in: req.session.logged_in,
-    });
-    res.status(200).json(newProject);
+    res.status(200).end();
   } catch (err) {
     console.error(err);
     res.status(400).json(err);
