@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="/public/css/style.css"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com"> 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 		<title>ProjectHub</title>
 	</head>
@@ -28,7 +28,7 @@
 					
 					<!-- nav logout / logged in user -->
 					<div>
-						<small class="text-light d-none d-lg-inline">Hello {{manager_name}}!</small>
+						<small class="text-light d-none d-lg-inline mr-4">Hello {{manager_name}}!</small>
 						<a href="/login" id="logout" class="nav-link px-2 link-secondary" style="padding: 0!important; display: inline;">Log Out</a></li>
 					</div>
 				</div>
@@ -46,9 +46,10 @@
 		</main>
 	</section>
 
+	<!-- only link js if user is signed in -->
 	{{#if logged_in}}
 	<script src="/js/logout.js"></script>
-  <script src="./../../js/projectDelete.js" defer></script>
+  	<script src="./../../js/projectDelete.js" defer></script>
 	{{/if}}
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

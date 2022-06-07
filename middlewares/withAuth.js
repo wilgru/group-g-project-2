@@ -7,4 +7,5 @@ function withAuth() {
   }
 }
 
+// export modules
 module.exports = withAuth;
