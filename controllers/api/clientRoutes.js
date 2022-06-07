@@ -16,12 +16,8 @@ router.post('/', async (req, res) => {
       dateCreated: req.body.dateCreated,
     });
 
-    // Pass serialized data and session flag into template
-    res.render('clientList', {
-      logged_in: req.session.logged_in,
-    });
-
-    res.status(200).json(addClient);
+    // complete request
+    res.status(200).end();
   } catch (err) {
     console.error(err);
     res.status(400).json(err);
