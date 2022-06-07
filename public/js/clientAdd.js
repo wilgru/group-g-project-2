@@ -28,7 +28,10 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/client/list');
     } else {
-      alert('Failed to create a client');
+      alert(response.statusText);
+      console.log(response)
+      console.log('\n', response.statusText)
+      // alert('Failed to create a client');
     }
   }
 };
