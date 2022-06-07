@@ -22,9 +22,9 @@ router.post('/', async (req, res) => {
     console.log('\n\n')
 
     // Pass serialized data and session flag into template
-    res.redirect('clientList');
+    // res.redirect('/client/list');
 
-    // res.status(200).json(addClient);
+    res.status(200).json(addClient);
   } catch (err) {
     console.error(err);
     res.status(400).json(err);
